@@ -2894,7 +2894,7 @@ NULL
 
 
 
-#' One hundred year record of worldwide seismic activity(1770-1869)
+#' One hundred year record of worldwide seismic activity (1770-1869)
 #' 
 #' Data for Exercise 6.97
 #' 
@@ -2910,13 +2910,12 @@ NULL
 #' Duxbury
 #' @keywords datasets
 #' @examples
-#' 
-#' str(Earthqk)
-#' attach(Earthqk)
-#' EDA(severity)
-#' t.test(severity,mu=100,alternative="greater")
-#' detach(Earthqk)
-#' 
+#'Earthqk <- read.csv("~/BSDA/data-raw/EARTHQK.csv") 
+#' EARTHQK
+#'str(Earthqk)
+#'Earthqk$severity
+#'EDA(Earthqk$severity)
+#'t.test(Earthqk$severity,mu=100,alternative="greater")
 NULL
 
 
@@ -2954,10 +2953,10 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' Educat <- read.csv("~/BSDA/data-raw/Educat.csv")
 #' str(Educat)
-#' attach(Educat)
-#' plot(nodegree,crime,xlab="No Crime",ylab="Violent Crime Rate per 100,000")
-#' detach(Educat)
+#' plot(Educat$nodegree,Educat$crime,xlab="No Crime",ylab="Violent Crime Rate per 100,000")
+#' 
 #' 
 NULL
 
@@ -2972,28 +2971,23 @@ NULL
 #' 
 #' @name Eggs
 #' @docType data
-#' @format A data frame with 12 observations on the following 7 variables.
+#' @format A data frame with 2 observations on the following 7 variables.
 #' \describe{ 
 #' \item{feed}{a numeric vector} 
 #' \item{eggs}{a numeric vector} 
-#' \item{SRES1}{a numeric vector}
-#' \item{FITS1}{a numeric vector} 
-#' \item{c1sq}{a numeric vector}
-#' \item{SRES2}{a numeric vector} 
-#' \item{FITS2}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
 #' @keywords datasets
 #' @examples
 #' 
+#' Eggs <- read.csv("~/BSDA/data-raw/EGGS.csv")
 #' str(Eggs)
 #' attach(Eggs)
 #' plot(feed,eggs)
 #' model <- lm(eggs~feed)
-#' abline(model)
-#' summary(model)
-#' detach(Eggs)
+#' plot(Eggs$feed,Eggs$eggs)
+#' model <- lm(Eggs$eggs~Eggs$feed)
 #' remove(model)
 #' 
 NULL
@@ -3032,12 +3026,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' Elderly <- read.csv("~/BSDA/data-raw/ELDERLY.csv")
+#' Elderly
 #' str(Elderly)
-#' attach(Elderly)
-#' stripchart(x=list(X98percent,X85percent),method="stack",pch=19,
-#' col=c("red","blue"),group.names=c("1998","1985"))
-#' cor(X98percent,X85percent)
-#' detach(Elderly)
+#' stripchart(x=list(Elderly$X98percent,Elderly$X85percent),method="stack",pch=19,
+#'            col=c("red","blue"),group.names=c("1998","1985"))
+#' cor(Elderly$X98percent,Elderly$X85percent)
 #' 
 NULL
 
@@ -3065,13 +3059,13 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' Energy <- read.csv("~/BSDA/data-raw/ENERGY.csv")
+#' Energy
 #' str(Energy)
-#' attach(Energy)
-#' plot(Size,kilowatt)
-#' cor(Size,kilowatt)
-#' model <- lm(kilowatt~Size)
-#' plot(Size,resid(model))
-#' detach(Energy)
+#' plot(Energy$Size,Energy$kilowatt)
+#' cor(Energy$Size,Energy$kilowatt)
+#' model <- lm(Energy$kilowatt~Energy$Size)
+#' plot(Energy$Size,resid(model))
 #' 
 NULL
 

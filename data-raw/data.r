@@ -487,7 +487,7 @@ EDA(rnorm(100))
 # Produces four graphs for the 100 randomly
 # generated standard normal variates.
 
-Educat <- read.csv("~/BSDA/data-raw/Educat.csv")
+Educat <- read.csv("~/BSDA/data-raw/EDUCAT.csv")
 devtools::use_data(Educat, overwrite = TRUE)
 Educat
 str(Educat)
@@ -503,7 +503,7 @@ abline(model)
 summary(model)
 remove(model)
 
-Elederly <- read.csv("~/BSDA/data-raw/ELDERLY.csv")
+Elderly <- read.csv("~/BSDA/data-raw/ELDERLY.csv")
 devtools::use_data(Elderly, overwrite = TRUE)
 Elderly
 str(Elderly)
@@ -524,7 +524,7 @@ Engineer <- read.csv("~/BSDA/data-raw/ENGINEER.csv")
 devtools::use_data(Engineer, overwrite = TRUE)
 Engineer
 str(Engineer)
-boxplot(Engineer$salary~Engineer$university)
+boxplot(Engineer$salary~Engineer$university) #INVALID TYPE (NULL)
 kruskal.test(Engineer$salary~as.factor(Engineer$university))
 
 Entrance <- read.csv("~/BSDA/data-raw/ENTRANCE.csv")
@@ -546,12 +546,12 @@ str(Epatwoseater)
 boxplot(Epatwoseater$cty)
 
 Executiv <- read.csv("~/BSDA/data-raw/EXECUTIV.csv")
-devtools::use_data(executiv, overwrite = TRUE)
+devtools::use_data(Executiv, overwrite = TRUE)
 Executiv
 str(Executiv)
 EDA(Executiv$Age)
 
-Excercise <- read.csv("~/BSDA/data-raw/EXERCISE.csv")
+Exercise <- read.csv("~/BSDA/data-raw/EXERCISE.csv")
 devtools::use_data(Exercise, overwrite = TRUE)
 Exercise
 str(Exercise)
@@ -616,7 +616,7 @@ Fish <- read.csv("~/BSDA/data-raw/FISH.csv")
 devtools::use_data(Fish, overwrite = TRUE)
 Fish
 str(Fish)
-median(Fish$smallmesh,na.rm=TRUE)
+median(Fish$smallmesh,na.rm=TRUE) #is.na applied to null error
 median(Fish$largemesh)
 IQR(Fish$smallmesh,na.rm=TRUE)
 IQR(Fish$largemesh)
@@ -777,7 +777,7 @@ str(Groupabc)
 STACKED <-stack(Groupabc)
 STACKED[1:5,]
 boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
-anova(lm(values~ind,data=STACKED))
+anova(lm(values~ind,data=STACKED)) #error in contrasts
 remove(STACKED)
 
 Groups <- read.csv("~/BSDA/data-raw/GROUPS.csv")
@@ -787,7 +787,7 @@ str(Groups)
 STACKED <-stack(Groups)
 STACKED[1:5,]
 boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
-anova(lm(values~ind,data=STACKED))
+anova(lm(values~ind,data=STACKED)) #error in contrasts
 remove(STACKED)
 
 Gym <- read.csv("~/BSDA/data-raw/GYM.csv")
@@ -806,17 +806,17 @@ str(Habits)
 qqnorm(Habits$differ)
 qqline(Habits$differ)
 shapiro.test(Habits$differ)
-t.test(B,A,paired=TRUE,alternative="less")
+t.test(B,A,paired=TRUE,alternative="less") #objects B and A 
 wilcox.test(B,A,paired=TRUE,alternative="less")
 
-Haptologo <- read.csv("~/BSDA/data-raw/HAPTOLOGO.csv") #error in loading data
-devtools::use_data(Haptologo, overwrite = TRUE)
-Haptologo
-str(Haptologo)
-qqnorm(Haptologo$concent,col="blue")
-qqline(Haptologo$concent,col="red")
-shapiro.test(Haptologo$concent)
-t.test(Haptologo$concent,mu=2,alternative="less")
+Haptoglo <- read.csv("~/BSDA/data-raw/HAPTOGLO.csv") 
+devtools::use_data(Haptoglo, overwrite = TRUE)
+Haptoglo
+str(Haptoglo)
+qqnorm(Haptoglo$concent,col="blue")
+qqline(Haptoglo$concent,col="red")
+shapiro.test(Haptoglo$concent)
+t.test(Haptoglo$concent,mu=2,alternative="less")
 
 Hardware <- read.csv("~/BSDA/data-raw/HARDWARE.csv")
 devtools::use_data(Hardware, overwrite = TRUE)
@@ -1012,10 +1012,10 @@ summary(lm(Insulate$loss~Insulate$temp))
 
 Iqgpa <- read.csv("~/BSDA/data-raw/IQGPA.csv")
 devtools::use_data(Iqgpa, overwrite = TRUE)
-Iqgpa #fix this
+Iqgpa 
 str(Iqgpa)
 plot(Iqgpa$IQ,Iqgpa$GPA)
-model <- lm(Iqgpa$GPA~Iqpga$IQ) #error
+model <- lm(Iqgpa$GPA~Iqgpa$IQ) #error
 abline(model)
 summary(model)
 remove(model)
@@ -1137,7 +1137,7 @@ Longtail <- read.csv("~/BSDA/data-raw/LONGTAIL.csv")
 devtools::use_data(Longtail, overwrite = TRUE)
 Longtail
 str(Longtail)
-boxplot(Longtail$score~Longtail$Group)
+boxplot(Longtail$score~Longtail$Group) #error invalid type (null)
 kruskal.test(Longtail$score~as.factor(Longtail$Group))
 anova(lm(Longtail$score~as.factor(Longtail$Group)))
 
@@ -1146,7 +1146,7 @@ devtools::use_data(Lowabil, overwrite = TRUE)
 Lowabil 
 str(Lowabil)
 DIF <- Lowabil$Experimt - Lowabil$Control
-qqnorm(DIF)
+qqnorm(DIF) #error has no y 
 qqline(DIF)
 shapiro.test(DIF)
 t.test(Lowabil$Experimt,Lowabil$Control,paired=TRUE)
