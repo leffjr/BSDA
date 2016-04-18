@@ -1,6 +1,9 @@
+# test changes and input data sets
+## all variables lowercase, all data sets start with capital letter and then lowercase rest of when read into R
+
 # Script data rework Start 3/24/16
 Abbey <- read.csv('abbey.csv')
-devtools::use_data(Abbey, overwrite = TRUE)
+devtools::use_data(Abbey, overwrite = TRUE) # puts it into RDA, need to do this for all
 #
 Abilene <- read.csv('Abilene.csv', colClasses = c("factor", "factor", "numeric"))
 devtools::use_data(Abilene, overwrite = TRUE)
@@ -467,4 +470,684 @@ boxplot(rate ~ year, data = Crime)
 # Darwin
 Darwin <- read.csv("Darwin.csv")
 devtools::use_data(Darwin, overwrite = TRUE)
+
+
+
+Earthqk <- read.csv("~/BSDA/data-raw/EARTHQK.csv")
+devtools::use_data(Earthqk, overwrite = TRUE)
+EARTHQK
+str(Earthqk)
+Earthqk$severity
+EDA(Earthqk$severity)
+t.test(Earthqk$severity,mu=100,alternative="greater")
+
+
+EDA
+EDA(rnorm(100))
+# Produces four graphs for the 100 randomly
+# generated standard normal variates.
+
+Educat <- read.csv("~/BSDA/data-raw/Educat.csv")
+devtools::use_data(Educat, overwrite = TRUE)
+Educat
+str(Educat)
+plot(Educat$nodegree,Educat$crime,xlab="No Crime",ylab="Violent Crime Rate per 100,000")
+
+Eggs <- read.csv("~/BSDA/data-raw/EGGS.csv")
+devtools::use_data(Eggs, overwrite = TRUE)
+Eggs
+str(Eggs)
+plot(Eggs$feed,Eggs$eggs)
+model <- lm(Eggs$eggs~Eggs$feed)
+abline(model)
+summary(model)
+remove(model)
+
+Elederly <- read.csv("~/BSDA/data-raw/ELDERLY.csv")
+devtools::use_data(Elderly, overwrite = TRUE)
+Elderly
+str(Elderly)
+stripchart(x=list(Elderly$X98percent,Elderly$X85percent),method="stack",pch=19,
+           col=c("red","blue"),group.names=c("1998","1985"))
+cor(Elderly$X98percent,Elderly$X85percent)
+
+Energy <- read.csv("~/BSDA/data-raw/ENERGY.csv")
+devtools::use_data(Energy, overwrite = TRUE)
+Energy
+str(Energy)
+plot(Energy$Size,Energy$kilowatt)
+cor(Energy$Size,Energy$kilowatt)
+model <- lm(Energy$kilowatt~Energy$Size)
+plot(Energy$Size,resid(model))
+
+Engineer <- read.csv("~/BSDA/data-raw/ENGINEER.csv")
+devtools::use_data(Engineer, overwrite = TRUE)
+Engineer
+str(Engineer)
+boxplot(Engineer$salary~Engineer$university)
+kruskal.test(Engineer$salary~as.factor(Engineer$university))
+
+Entrance <- read.csv("~/BSDA/data-raw/ENTRANCE.csv")
+devtools::use_data(Entrance, overwrite = TRUE)
+Entrance
+str(Entrance)
+stem(Entrance$score)
+
+Epaminicompact <- read.csv("~/BSDA/data-raw/EPAMINICOMPACT.csv")
+devtools::use_data(Epaminicompact, overwrite = TRUE)
+Epaminicompact
+str(Epaminicompact)
+summary(Epaminicompact$cty)
+
+Epatwoseater<- read.csv("~/BSDA/data-raw/EPATWOSEATER.csv")
+devtools::use_data(Epatwoseater, overwrite = TRUE)
+Epatwoseater
+str(Epatwoseater)
+boxplot(Epatwoseater$cty)
+
+Executiv <- read.csv("~/BSDA/data-raw/EXECUTIV.csv")
+devtools::use_data(executiv, overwrite = TRUE)
+Executiv
+str(Executiv)
+EDA(Executiv$Age)
+
+Excercise <- read.csv("~/BSDA/data-raw/EXERCISE.csv")
+devtools::use_data(Exercise, overwrite = TRUE)
+Exercise
+str(Exercise)
+stem(Exercise$loss)
+
+#cannot computer exact p-value wth ties error for wilcox.test
+Fabric <- read.csv("~/BSDA/data-raw/FABRIC.csv")
+devtools::use_data(Fabric, overwrite = TRUE)
+str(Fabric)
+DIF <- Fabric$With - Fabric$Without
+qqnorm(DIF)
+qqline(DIF)
+shapiro.test(DIF)
+wilcox.test(Fabric$With,Fabric$Without,paired=TRUE,alternative="greater")
+
+Faithful <- read.csv("~/BSDA/data-raw/FAITHFUL.csv")
+devtools::use_data(Faithful, overwrite = TRUE)
+Faithful
+str(Faithful)
+hist(Faithful$Time,prob=TRUE,xlab="Waiting time between eruptions",col="tomato")
+lines(density(Faithful$Time),col="red",lwd=3)
+t.test(Faithful$Time)$conf
+
+Family <- read.csv("~/BSDA/data-raw/FAMILY.csv")
+devtools::use_data(Family, overwrite = TRUE)
+Family
+str(Family)
+plot(Family$Number,Family$Cost)
+cor(Family$Number,Family$Cost)
+lm(Family$Cost~Family$Number)
+
+Ferraro1 <- read.csv("~/BSDA/data-raw/FERRARO1.csv")
+devtools::use_data(Ferraro1, overwrite = TRUE)
+Ferraro1
+str(Ferraro1)
+Ferraro1
+chisq.test(Ferraro1[,2:4])
+
+Ferraro2 <- read.csv("~/BSDA/data-raw/FERRARO2.csv")
+devtools::use_data(Ferraro2, overwrite = TRUE)
+Ferraro2
+str(Ferraro2)
+Ferraro2
+chisq.test(Ferraro2[,2:4])
+
+Fertility <- read.csv("~/BSDA/data-raw/FERTILITY.csv")
+devtools::use_data(Fertility, overwrite = TRUE)
+Fertility
+str(Fertility)
+library(lattice)
+dotplot(Fertility$State~Fertility$rate)
+stem(Fertility$rate)
+fivenum(Fertility$rate)
+EDA(Fertility$rate)
+
+Firstchi <- read.csv("~/BSDA/data-raw/FIRSTCHI.csv")
+devtools::use_data(Firstchi, overwrite = TRUE)
+Firstchi #ADD EXAMPLES
+
+
+Fish <- read.csv("~/BSDA/data-raw/FISH.csv")
+devtools::use_data(Fish, overwrite = TRUE)
+Fish
+str(Fish)
+median(Fish$smallmesh,na.rm=TRUE)
+median(Fish$largemesh)
+IQR(Fish$smallmesh,na.rm=TRUE)
+IQR(Fish$largemesh)
+SIGN.test(Fish$smallmesh,conf.level=.99)
+SIGN.test(Fish$largemesh,conf.level=.99)
+t.test(Fish$smallmesh,Fish$largemesh)
+
+Fitness <- read.csv("~/BSDA/data-raw/FITNESS.csv")
+devtools::use_data(Fitness, overwrite = TRUE)
+str(Fitness)
+DIF <- Fitness$After - Fitness$Before
+qqnorm(DIF)
+qqline(DIF)
+shapiro.test(DIF)
+t.test(Fitness$After,Fitness$Before,paired=TRUE,alternative="greater")
+
+Florida2000 <- read.csv("~/BSDA/data-raw/FLORIDA2000.csv")
+devtools::use_data(Florida2000, overwrite = TRUE)
+Florida2000
+str(Florida2000)
+plot(Florida2000$Total,Florida2000$BUCHANAN,xlab="Total votes cast (in thousands)",
+     ylab="Votes for Buchanan")
+
+Fluid <- read.csv("~/BSDA/data-raw/FLUID.csv")
+devtools::use_data(Fluid, overwrite = TRUE)
+Fluid
+str(Fluid)
+stem(Fluid$X34kV)
+SIGN.test(Fluid$X34kV)
+
+Food <- read.csv("~/BSDA/data-raw/FOOD.csv")
+devtools::use_data(Food, overwrite = TRUE)
+Food
+str(Food)
+EDA(Food$food)
+
+Framingh <- read.csv("~/BSDA/data-raw/FRAMINGH.csv")
+devtools::use_data(Framingh, overwrite = TRUE)
+Framingh
+str(Framingh)
+stem(Framingh$cholest)
+hist(Framingh$cholest,prob=TRUE,ylim=c(0,.012))
+lines(density(Framingh$cholest))
+boxplot(Framingh$cholest,col="brown")
+sum(Framingh$cholest>200&Framingh$cholest<240)/length(Framingh$cholest)
+
+Freshman <- read.csv("~/BSDA/data-raw/FRESHMAN.csv")
+devtools::use_data(Freshman, overwrite = TRUE)
+Freshman
+str(Freshman)
+SIGN.test(Freshman$age,md=19)
+
+Funeral <- read.csv("~/BSDA/data-raw/FUNERAL.csv")
+devtools::use_data(Funeral, overwrite = TRUE)
+Funeral
+str(Funeral)
+Funeral
+chisq.test(Funeral[,2:4])
+
+Galaxie <- read.csv("~/BSDA/data-raw/GALAXIE.csv")
+devtools::use_data(Galaxie, overwrite = TRUE)
+Galaxie
+str(Galaxie)
+EDA(Galaxie$velocity)
+
+Gallup <- read.csv("~/BSDA/data-raw/GALLUP.csv")
+devtools::use_data(Gallup, overwrite = TRUE)
+Gallup
+INFO <- c(43,52,5,42,53,5,44,51,5,30,67,3,45,50,5,58,33,9,27,67,6,26,70,4,45,
+          52,3,54,39,7,49,47,4,39,55,6)
+INFOmat <- matrix(INFO,nrow=12,byrow=TRUE)
+INFOmat
+rownames(INFOmat) <- c("National","Gender: Male","Gender: Female",
+                       "Education: College","Education: High School","Education: Grade School",
+                       "Age: 18-24", "Age: 25-29", "Age: 30-49", "Age: 50-older", "Religion: Protestant",
+                       "Religion: Catholic")
+colnames(INFOmat) <- c("Criminal", "Not.Criminal", "No.Opinion")
+INFOmat
+barplot(t(INFOmat[2:3,]),beside=TRUE,legend=TRUE,names=c("Male","Female"),
+        ylab="Percent of Population Opining")
+barplot((INFOmat[2:3,]),beside=TRUE,legend=TRUE,ylab="Percent of Population Opining" )
+remove(INFO,INFOmat)
+
+Gasoline<- read.csv("~/BSDA/data-raw/GASOLINE.csv")
+devtools::use_data(Gasoline, overwrite = TRUE)
+Gasoline
+str(Gasoline)
+stem(Gasoline$price)
+
+German <- read.csv("~/BSDA/data-raw/GERMAN.csv")
+devtools::use_data(German, overwrite = TRUE)
+German # same wilcox problem
+str(German)
+qqnorm(German$differ)
+qqline(German$differ)
+shapiro.test(German$differ)
+wilcox.test(German$Before,German$After,paired=TRUE)
+
+Golf <- read.csv("~/BSDA/data-raw/GOLF.csv")
+devtools::use_data(Golf, overwrite = TRUE)
+Golf
+str(Golf)
+stem(Golf$yards)
+EDA(Golf$yards)
+
+Governor <- read.csv("~/BSDA/data-raw/GOVERNOR.csv")
+devtools::use_data(Governor, overwrite = TRUE)
+Governor
+str(Governor)
+EDA(Governor$X1999salary)
+
+Gpa <- read.csv("~/BSDA/data-raw/GPA.csv")
+devtools::use_data(Gpa, overwrite = TRUE)
+Gpa
+str(Gpa)
+plot(Gpa$HSGPA,Gpa$CollGPA)
+model <- lm(Gpa$CollGPA~Gpa$HSGPA)
+abline(model)
+model
+r <- resid(model)
+yhat <- fitted(model)
+Table2.1 <- cbind(Gpa$HSGPA,Gpa$CollGPA,yhat,r)
+Table2.1
+remove(r,yhat,model,Table2.1)
+
+Grades <- read.csv("~/BSDA/data-raw/GRADES.csv")
+devtools::use_data(Grades, overwrite = TRUE)
+Grades
+str(Grades)
+EDA(Grades$grades)
+
+Graduate <- read.csv("~/BSDA/data-raw/GRADUATE.csv")
+devtools::use_data(Graduate, overwrite = TRUE)
+Graduate
+str(Graduate)
+names(Graduate$Percent) <- Graduate$School
+barplot(Graduate$Percent,las=2,cex.names=.65,col="tomato")
+
+Greenriv <- read.csv("~/BSDA/data-raw/GREENRIV.csv")
+devtools::use_data(Greenriv, overwrite = TRUE)
+Greenriv
+str(Greenriv)
+EDA(Greenriv$thick)
+SIGN.test(Greenriv$thick,md=7.3,alternative="greater")
+
+Grnriv2 <- read.csv("~/BSDA/data-raw/GRNRIV2.csv")
+devtools::use_data(Grnriv2, overwrite = TRUE)
+Grnriv2
+str(Grnriv2)
+EDA(Grnriv2$thick)
+t.test(Grnriv2$thick,mu=8,alternative="less")
+SIGN.test(Grnriv2$thick,md=8,alternative="less")
+
+Groupabc <- read.csv("~/BSDA/data-raw/GROUPABC.csv")
+devtools::use_data(Groupabc, overwrite = TRUE)
+Groupabc
+str(Groupabc)
+STACKED <-stack(Groupabc)
+STACKED[1:5,]
+boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
+anova(lm(values~ind,data=STACKED))
+remove(STACKED)
+
+Groups <- read.csv("~/BSDA/data-raw/GROUPS.csv")
+devtools::use_data(Groups, overwrite = TRUE)
+Groups
+str(Groups)
+STACKED <-stack(Groups)
+STACKED[1:5,]
+boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
+anova(lm(values~ind,data=STACKED))
+remove(STACKED)
+
+Gym <- read.csv("~/BSDA/data-raw/GYM.csv")
+devtools::use_data(Gym, overwrite = TRUE)
+Gym
+str(Gym)
+plot(Gym$age,Gym$number)
+model <- lm(Gym$number~Gym$age)
+abline(model)
+cor(Gym$age,Gym$number)
+
+Habits <- read.csv("~/BSDA/data-raw/HABITS.csv")
+devtools::use_data(Habits, overwrite = TRUE)
+Habits #same wilcox problem
+str(Habits)
+qqnorm(Habits$differ)
+qqline(Habits$differ)
+shapiro.test(Habits$differ)
+t.test(B,A,paired=TRUE,alternative="less")
+wilcox.test(B,A,paired=TRUE,alternative="less")
+
+Haptologo <- read.csv("~/BSDA/data-raw/HAPTOLOGO.csv") #error in loading data
+devtools::use_data(Haptologo, overwrite = TRUE)
+Haptologo
+str(Haptologo)
+qqnorm(Haptologo$concent,col="blue")
+qqline(Haptologo$concent,col="red")
+shapiro.test(Haptologo$concent)
+t.test(Haptologo$concent,mu=2,alternative="less")
+
+Hardware <- read.csv("~/BSDA/data-raw/HARDWARE.csv")
+devtools::use_data(Hardware, overwrite = TRUE)
+Hardware
+data(Hardware)
+
+Hardwood <- read.csv("~/BSDA/data-raw/hardwood.csv")
+devtools::use_data(Hardwood, overwrite = TRUE)
+Hardwood
+str(Hardwood)
+
+Heat <- read.csv("~/BSDA/data-raw/HEAT.csv")
+devtools::use_data(Heat, overwrite = TRUE)
+Heat
+str(Heat)
+MAT <- cbind(Heat$Reserv, Heat$All.US, Heat$Not.Rese)
+row.names(MAT) <- c("Utility Gas","LP bottled Gas","Electricity",
+                    "Fuel Oil","Wood","Other Fuel")
+
+Heat <- read.csv("~/BSDA/data-raw/HEAT.csv")
+devtools::use_data(Heat, overwrite = TRUE)
+MAT
+barplot(t(MAT),beside=TRUE,legend=TRUE,main="Heating of American Indian Homes")
+sum(Heat$Reserv)
+sum(Heat$All.US)
+sum(Heat$Not.Rese)
+
+Heating <- read.csv("~/BSDA/data-raw/HEATING.csv")
+devtools::use_data(Heating, overwrite = TRUE)
+Heating
+str(Heating)
+boxplot(Heating$Rating~Heating$Type)
+kruskal.test(Heating$Rating~as.factor(Heating$Type))
+
+Hodgkin <- read.csv("~/BSDA/data-raw/HODGKIN.csv")
+devtools::use_data(Hodgkin, overwrite = TRUE)
+Hodgkin
+str(Hodgkin)
+HOD <- as.matrix(Hodgkin[,2:4])
+rownames(HOD) <- Hodgkin$Histological
+HOD
+barplot(t(HOD),legend=TRUE,beside=TRUE)
+remove(HOD)
+
+Homes <- read.csv("~/BSDA/data-raw/HOMES.csv")
+devtools::use_data(Homes, overwrite = TRUE)
+Homes
+str(Homes)
+EDA(Homes$X2000)
+boxplot(Homes$X1994,Homes$X2000,names=c("1994","2000"),col=c("red","blue"),ylab="Cost")
+boxplot(Homes$X2000~Homes$Region)
+
+Homework <- read.csv("~/BSDA/data-raw/HOMEWORK.csv")
+devtools::use_data(Homework, overwrite = TRUE)
+Homework
+str(Homework)
+boxplot(Homework$Private,Homework$Public)
+t.test(Homework$Private,Homework$Public,conf.level=.98)
+
+Honda <- read.csv("~/BSDA/data-raw/HONDA.csv")
+devtools::use_data(Honda, overwrite = TRUE)
+Honda
+str(Honda)
+t.test(Honda$mileage,mu=40,alternative="less")
+
+Hostile <- read.csv("~/BSDA/data-raw/HOSTILE.csv")
+devtools::use_data(Hostile, overwrite = TRUE)
+Hostile
+str(Hostile)
+boxplot(Hostile$HLT~Hostile$Type)
+kruskal.test(Hostile$HLT~as.factor(Hostile$Type))
+
+Housing <- read.csv("~/BSDA/data-raw/HOUSING.csv")
+devtools::use_data(Housing, overwrite = TRUE)
+Housing
+str(Housing)
+stem(Housing$X1993)
+stem(Housing$X1984)
+par(mfrow=c(2,2))
+stripchart(x=list(Housing$X1984,Housing$X1993),method="stack",pch=1,cex=1.2,
+           col=c("orange","pink"),group.names=c("1984","1993"))
+title(main="Problem 5.82 \n We have not talked about this kind of graph before...")
+hist(Housing$X1993,breaks="Scott",col="pink")
+hist(Housing$X1984,breaks="Scott",col="orange")
+plot(density(Housing$X1993),col="red",xlab="",ylab="",main="",ylim=c(0,.00003))
+lines(density(Housing$X1984),col="orange")
+par(mfrow=c(1,1))
+boxplot(Housing$X1993,Housing$X1984,col=c("pink","orange"),names=c("1993","1984"),main="Problem 5.82")
+SIGN.test(Housing$X1984,conf.level=.98)
+SIGN.test(Housing$X1993,conf.level=.98)
+# 98% CI -> 63591.1 79622.56 and 85591.69 109915.4
+# Placing on a common number line...
+my.axis <- function(side, at, labels,...)
+{for(i in seq(along=at)) axis(side=side, at=at[i], labels=labels[i],...) }
+
+plot(1,type="n",xlim=c(63000,110000),ylim=c(0,1),
+     xlab="Median House Price",ylab="",yaxt="n",main="")
+title(main="98 Percent Confidence Intervals")
+my.axis(2,at=c(.25,.75),labels=c("1984","1993"), cex.axis=1.2 ,las=2)
+lines( c(63591.1, 79622.56),c(.25,.25),col="orange",lwd=24)
+lines( c(85591.69, 109915.4),c(.75,.75),col="pink",lwd=24)
+
+Hurrican <- read.csv("~/BSDA/data-raw/HURRICAN.csv")
+devtools::use_data(Hurrican, overwrite = TRUE)
+Hurrican
+str(Hurrican)
+barplot(table(Hurrican$hurrican),col="blue",main="Problem 1.38",
+        xlab="Number of Hurricanes",ylab="Number of Seasons")
+boxplot(Hurrican$storms~Hurrican$ElNino)
+anova(lm(Hurrican$storms~Hurrican$ElNino))
+
+Iceberg <- read.csv("~/BSDA/data-raw/ICEBERG.csv")
+devtools::use_data(Iceberg, overwrite = TRUE)
+Iceberg
+str(Iceberg)
+plot(Iceberg$GrandBk,Iceberg$Newfound)
+abline(lm(Iceberg$Newfound~Iceberg$GrandBk))
+
+Income <- read.csv("~/BSDA/data-raw/INCOME.csv")
+devtools::use_data(Income, overwrite = TRUE)
+Income
+str(Income)
+CATS <-factor(cut(Income$income,breaks=c(0.5,1.0,1.5,2,max(Income$income)) ))
+table(CATS)
+table(CATS)/length(Income$income)
+barplot(table(CATS),col="lightblue",main="Problem 1.33")
+remove(CATS)
+
+Independent <- read.csv("~/BSDA/data-raw/INDEPENDENT.csv")
+devtools::use_data(Independent, overwrite = TRUE)
+Independent #cannot compute p-value with ties error
+str(Independent)
+boxplot(Independent$score~Independent$group)
+wilcox.test(Independent$score~Independent$group)
+
+Indian <- read.csv("~/BSDA/data-raw/INDIAN.csv")
+devtools::use_data(Indian, overwrite = TRUE)
+Indian
+str(Indian)
+par(mfrow=c(1,2))
+plot(Indian$highsch,Indian$income,xlab="Percent High School Graduates", ylab="Per capita income")
+plot(Indian$highsch,Indian$poverty,xlab="Percent High School Graduates", ylab="Poverty rate")
+par(mfrow=c(1,1))
+cor(cbind(Indian$highsch,Indian$income,Indian$poverty))
+
+Indiapol <- read.csv("~/BSDA/data-raw/INDIAPOL.csv")
+devtools::use_data(Indiapol, overwrite = TRUE)
+Indiapol
+str(Indiapol)
+plot(Indiapol$year,Indiapol$speed,type="l")
+
+Indy500 <- read.csv("~/simplemathr/data-raw/BSDAexcelData/INDY500.csv")
+devtools::use_data(Indy500, overwrite = TRUE)
+Indy500
+str(Indy500)
+stripchart(Indy500$qualif~Indy500$group, method="stack",pch=19,col=c("red","blue"))
+boxplot(Indy500$qualif~Indy500$group)
+t.test(Indy500$qualif~Indy500$group)
+
+Inflatio <- read.csv("~/BSDA/data-raw/INFLATIO.csv")
+devtools::use_data(Inflatio, overwrite = TRUE)
+Inflatio
+str(Inflatio)
+plot(Inflatio$inflation,Inflatio$increase)
+cor(Inflatio$inflation,Inflatio$increase,use="complete.obs")
+
+Inletoil <- read.csv("~/BSDA/data-raw/INLETOIL.csv")
+devtools::use_data(Inletoil, overwrite = TRUE)
+Inletoil
+str(Inletoil)
+t.test(Inletoil$temp)$conf
+t.test(Inletoil$temp,mu=98,alternative="less")
+
+Inmate <- read.csv("~/BSDA/data-raw/INMATE.csv")
+devtools::use_data(Inmate, overwrite = TRUE)
+Inmate
+str(Inmate)
+Inmate
+chisq.test(Inmate[,2:5])
+
+Inspect <- read.csv("~/BSDA/data-raw/INSPECT.csv")
+devtools::use_data(Inspect, overwrite = TRUE)
+Inspect
+str(Inspect)
+Inspect
+chisq.test(Inspect[,2:4])
+
+Insulate <- read.csv("~/BSDA/data-raw/INSULATE.csv")
+devtools::use_data(Insulate, overwrite = TRUE)
+Insulate
+str(Insulate)
+summary(lm(Insulate$loss~Insulate$temp))
+
+Iqgpa <- read.csv("~/BSDA/data-raw/IQGPA.csv")
+devtools::use_data(Iqgpa, overwrite = TRUE)
+Iqgpa #fix this
+str(Iqgpa)
+plot(Iqgpa$IQ,Iqgpa$GPA)
+model <- lm(Iqgpa$GPA~Iqpga$IQ) #error
+abline(model)
+summary(model)
+remove(model)
+
+Irises <- read.csv("~/BSDA/data-raw/IRISES.csv")
+devtools::use_data(Irises, overwrite = TRUE)
+Irises
+str(Irises)
+EDA(Irises$sepalL1)
+t.test(Irises$sepalL1,conf.level=.99)$conf
+
+Jdpower <- read.csv("~/BSDA/data-raw/JDPOWER.csv")
+devtools::use_data(Jdpower, overwrite = TRUE)
+Jdpower
+str(Jdpower)
+plot(Jdpower$X1994,Jdpower$X1995)
+model <- lm(Jdpower$X1995~Jdpower$X1994)
+abline(model)
+model
+cor(Jdpower$X1995,Jdpower$X1994)
+
+Jobsat <- read.csv("~/BSDA/data-raw/JOBSAT.csv")
+devtools::use_data(Jobsat, overwrite = TRUE)
+Jobsat
+str(Jobsat)
+plot(Jobsat$WSPT,Jobsat$satisfac)
+model <- lm(Jobsat$satisfac~Jobsat$WSPT)
+abline(model)
+summary(model)
+remove(model)
+
+Kidsmoke <- read.csv("~/BSDA/data-raw/KIDSMOKE.csv")
+devtools::use_data(Kidsmoke, overwrite = TRUE)
+Kidsmoke
+str(Kidsmoke)
+table(Kidsmoke$gender,Kidsmoke$smoke)
+addmargins(table(Kidsmoke$gender,Kidsmoke$smoke))
+addmargins(table(Kidsmoke$gender,Kidsmoke$smoke)/1000)
+
+Kilowatt <- read.csv("~/BSDA/data-raw/KILOWATT.csv")
+devtools::use_data(Kilowatt, overwrite = TRUE)
+Kilowatt
+str(Kilowatt)
+EDA(Kilowatt$rate)
+
+Kinder <- read.csv("~/BSDA/data-raw/KINDER.csv")
+devtools::use_data(Kinder, overwrite = TRUE)
+Kinder
+str(Kinder)
+DIF <- Kinder$Kinder - Kinder$NoKinder
+qqnorm(DIF)
+qqline(DIF)
+shapiro.test(DIF)
+t.test(Kinder$Kinder, Kinder$NoKinder,paired=TRUE,alternative="greater")
+remove(DIF)
+
+Laminect <- read.csv("~/BSDA/data-raw/LAMINECT.csv")
+devtools::use_data(Laminect, overwrite = TRUE)
+Laminect
+str(Laminect)
+boxplot(Laminect$cost~Laminect$class)
+anova(lm(Laminect$cost~as.factor(Laminect$class)))
+
+Lead <- read.csv("~/BSDA/data-raw/LEAD.csv")
+devtools::use_data(Lead, overwrite = TRUE)
+Lead
+str(Lead)
+boxplot(Lead$exposed,Lead$control, names=c("Exposed","Control"),col=c("red","blue"))
+
+Leader <- read.csv("~/BSDA/data-raw/LEADER.csv")
+devtools::use_data(Leader, overwrite = TRUE)
+Leader
+str(Leader)
+boxplot(Leader$under35,Leader$over35,names=c("Under 35","Over 35"),col=c("green","brown"))
+t.test(Leader$under35,Leader$over35)
+
+Lethal <- read.csv("~/BSDA/data-raw/LETHAL.csv")
+devtools::use_data(Lethal, overwrite = TRUE)
+Lethal
+str(Lethal)
+SIGN.test(Lethal$survival,md=45,alternative="less")
+
+Life <- read.csv("~/BSDA/data-raw/LIFE.csv")
+devtools::use_data(Life, overwrite = TRUE)
+Life
+str(Life)
+plot(Life$year,Life$Men,type="l",ylim=c(min(Life$Men,Life$Women),max(Life$Men,Life$Women)),col="blue",
+     main="Life Expectancy versus Year",ylab="Age",xlab="Year")
+lines(Life$year,Life$Women,col="red")
+text(1955,65,"Men",col="blue")
+text(1955,70,"Women",col="red")
+
+Lifespan <- read.csv("~/BSDA/data-raw/LIFESPAN.csv")
+devtools::use_data(Lifespan, overwrite = TRUE)
+Lifespan
+str(Lifespan)
+plot(Lifespan$heat,Lifespan$life)
+model <- lm(Lifespan$life~Lifespan$heat)
+model
+resid(model)
+sum((resid(model))^2)
+anova(model)
+# plot(model)  # Used for diagnostic purposes
+
+Ligntmonth <- read.csv("~/BSDA/data-raw/LIGNTMONTH.csv")
+devtools::use_data(Ligntmonth, overwrite = TRUE)
+Ligntmonth
+str(Ligntmonth)
+plot(Ligntmonth$damage,Ligntmonth$deaths)
+
+Lodge <- read.csv("~/BSDA/data-raw/LODGE.csv")
+devtools::use_data(Lodge, overwrite = TRUE)
+Lodge
+str(Lodge)
+boxplot(Lodge$Traffic~Lodge$Site)
+anova(lm(Lodge$Traffic~as.factor(Lodge$Site)))
+
+Longtail <- read.csv("~/BSDA/data-raw/LONGTAIL.csv")
+devtools::use_data(Longtail, overwrite = TRUE)
+Longtail
+str(Longtail)
+boxplot(Longtail$score~Longtail$Group)
+kruskal.test(Longtail$score~as.factor(Longtail$Group))
+anova(lm(Longtail$score~as.factor(Longtail$Group)))
+
+Lowabil <- read.csv("~/BSDA/data-raw/LOWABIL.csv")
+devtools::use_data(Lowabil, overwrite = TRUE)
+Lowabil 
+str(Lowabil)
+DIF <- Lowabil$Experimt - Lowabil$Control
+qqnorm(DIF)
+qqline(DIF)
+shapiro.test(DIF)
+t.test(Lowabil$Experimt,Lowabil$Control,paired=TRUE)
 

@@ -1,0 +1,5 @@
+Gender,Crime1,No Crime1,No Opinion1,Education,Crime2,No Crime2,No Opinion2,Age,Crime3,No Crime3,No Opinion3,Religion,Crime4,No Crime4,No Opinion4
+Male,42,53,5,College,30,67,3,18-24,27,67,6,Protestant,49,47,4
+Female,44,51,5,High School,45,50,5,25-29,26,70,4,Catholic,39,55,6
+,,,,Grade School,58,33,9,30-49,45,52,3,,,,
+,,,,,,,,50-older,54,39,7,,,,

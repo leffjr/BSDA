@@ -1,3 +1,7 @@
+#final changes only
+#instead of NULL at end of each documentation write name of data set in quotation marks
+#copy latec for factor levels?
+
 #############################################################################
 #' @import lattice 
 #' @importFrom graphics abline axis box boxplot dotchart hist legend lines mtext par plot plot.design points polygon segments text title
