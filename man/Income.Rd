@@ -4,7 +4,7 @@
 \name{Income}
 \alias{Income}
 \title{Percent change in personal income from 1st to 2nd quarter in 2000}
-\format{A data frame with 51 observations on the following 6 variables.
+\format{A data frame with 51 observations on the following 2 variables.
 \describe{ 
 \item{State}{a factor with levels \code{Alabama}
 \code{Alaska} \code{Arizona} \code{Arkansas} \code{California}
@@ -20,24 +20,20 @@ Dakota} \code{Ohio} \code{Oklahoma} \code{Oregon} \code{Pennsylvania}
 \code{Tennessee} \code{Texas} \code{Utah} \code{Vermont} \code{Virginia}
 \code{Washington} \code{West Virginia} \code{Wisconsin} \code{Wyoming}}
 \item{income}{a numeric vector} 
-\item{C3}{a numeric vector}
-\item{Class}{a numeric vector} 
-\item{freq}{a numeric vector}
-\item{percent}{a numeric vector} 
 }}
+\usage{
+Income
+}
 \description{
 Data for Exercise 1.33
 }
 \examples{
 
 str(Income)
-attach(Income)
-CATS <-factor(cut(income,breaks=c(0.5,1.0,1.5,2,max(income)) ))    
+CATS <-factor(cut(Income$income,breaks=c(0.5,1.0,1.5,2,max(Income$income)) ))
 table(CATS)
-table(CATS)/length(income)
+table(CATS)/length(Income$income)
 barplot(table(CATS),col="lightblue",main="Problem 1.33")
-detach(Income)
-remove(CATS)      
 
 }
 \references{

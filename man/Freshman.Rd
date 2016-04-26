@@ -8,15 +8,16 @@
 \describe{ 
 \item{age}{a numeric vector} 
 }}
+\usage{
+Freshman
+}
 \description{
 Data for Exercise 6.53
 }
 \examples{
 
 str(Freshman)
-attach(Freshman)
-SIGN.test(age,md=19)
-detach(Freshman)
+SIGN.test(Freshman$age,md=19)
 
 }
 \references{

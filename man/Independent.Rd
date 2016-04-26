@@ -10,16 +10,17 @@
 \item{group}{a numeric vector} 
 \item{ranks}{a numeric vector} 
 }}
+\usage{
+Independent
+}
 \description{
 Data for Exercise 7.41
 }
 \examples{
 
 str(Independent)
-attach(Independent)
-boxplot(score~group)
-wilcox.test(score~group)
-detach(Independent)
+boxplot(Independent$score~Independent$group)
+wilcox.test(Independent$score~Independent$group)
 
 }
 \references{

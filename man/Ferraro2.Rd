@@ -4,24 +4,19 @@
 \name{Ferraro2}
 \alias{Ferraro2}
 \title{Choice of vice presidental candidate in 1984 by gender}
-\format{A data frame with 2 observations on the following 4 variables.
-\describe{ 
-\item{gender}{a factor with levels \code{Men}
-\code{Women}} 
-\item{Bush}{a numeric vector} 
-\item{Ferraro}{a numeric vector} 
-\item{undecide}{a numeric vector} 
-}}
+\format{An object of class \code{data.frame} with 1000 rows and 2 columns.}
+\usage{
+Ferraro2
+}
 \description{
 Data for Exercise 8.23
 }
 \examples{
 
 str(Ferraro2)
-attach(Ferraro2)
-Ferraro2
-chisq.test(Ferraro2[,2:4])
-detach(Ferraro2)
+T2 <- xtabs(~gender + vote, data = Ferraro2)
+T2
+chisq.test(T2)
 
 }
 \references{

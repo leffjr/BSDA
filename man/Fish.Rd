@@ -4,29 +4,25 @@
 \name{Fish}
 \alias{Fish}
 \title{Length and number of fish caught with small and large mesh codend}
-\format{A data frame with 767 observations on the following 5 variables.
-\describe{ 
-\item{length}{a numeric vector} 
-\item{smalmesh}{a numeric vector} 
-\item{largmesh}{a numeric vector}
-\item{smallmesh}{a numeric vector} 
-\item{largemesh}{a numeric vector} 
-}}
+\format{An object of class \code{data.frame} with 1506 rows and 2 columns.}
+\usage{
+Fish
+}
 \description{
 Data for Exercises 5.83, 5.119, and 7.29
 }
 \examples{
 
 str(Fish)
-attach(Fish)
-median(smallmesh,na.rm=TRUE)
-median(largemesh)
-IQR(smallmesh,na.rm=TRUE)
-IQR(largemesh)
-SIGN.test(smallmesh,conf.level=.99)
-SIGN.test(largemesh,conf.level=.99)
-t.test(smallmesh,largemesh)
-detach(Fish)
+TF <- xtabs(~mesh + Length, data = Fish)
+TF
+median(TF[2,],na.rm=TRUE) #is.na applied to null error
+median(TF[1,])
+IQR(TF[2,],na.rm=TRUE)
+IQR(TF[1,])
+SIGN.test(TF[2,],conf.level=.99)
+SIGN.test(TF[1,],conf.level=.99)
+t.test(TF[2,],TF[1,])
 
 }
 \references{

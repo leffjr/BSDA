@@ -8,19 +8,20 @@
 \describe{ 
 \item{cholest}{a numeric vector} 
 }}
+\usage{
+Framingh
+}
 \description{
 Data for Exercises 1.55, 1.75, 3.69, and 5.60
 }
 \examples{
 
 str(Framingh)
-attach(Framingh)
-stem(cholest)
-hist(cholest,prob=TRUE,ylim=c(0,.012))
-lines(density(cholest))
-boxplot(cholest,col="brown")
-sum(cholest>200&cholest<240)/length(cholest)
-detach(Framingh)
+stem(Framingh$cholest)
+hist(Framingh$cholest,prob=TRUE,ylim=c(0,.012))
+lines(density(Framingh$cholest))
+boxplot(Framingh$cholest,col="brown")
+sum(Framingh$cholest>200&Framingh$cholest<240)/length(Framingh$cholest)
 
 }
 \references{

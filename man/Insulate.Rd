@@ -9,15 +9,16 @@
 \item{temp}{a numeric vector} 
 \item{loss}{a numeric vector} 
 }}
+\usage{
+Insulate
+}
 \description{
 Data for Exercise 9.50
 }
 \examples{
 
 str(Insulate)
-attach(Insulate)
-summary(lm(loss~temp))
-detach(Insulate)
+summary(lm(Insulate$loss~Insulate$temp))
 
 }
 \references{

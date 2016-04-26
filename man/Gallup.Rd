@@ -27,6 +27,9 @@ conducted in 1980}
 \item{No.Crime4}{a numeric vector} 
 \item{No.Opinion4}{a numeric vector} 
 }}
+\usage{
+Gallup
+}
 \description{
 Data for Exercise 2.76
 }
@@ -37,13 +40,13 @@ INFO <- c(43,52,5,42,53,5,44,51,5,30,67,3,45,50,5,58,33,9,27,67,6,26,70,4,45,
 INFOmat <- matrix(INFO,nrow=12,byrow=TRUE)
 INFOmat
 rownames(INFOmat) <- c("National","Gender: Male","Gender: Female",
-"Education: College","Education: High School","Education: Grade School",
-"Age: 18-24", "Age: 25-29", "Age: 30-49", "Age: 50-older", "Religion: Protestant", 
-"Religion: Catholic")
+                       "Education: College","Education: High School","Education: Grade School",
+                       "Age: 18-24", "Age: 25-29", "Age: 30-49", "Age: 50-older", "Religion: Protestant",
+                       "Religion: Catholic")
 colnames(INFOmat) <- c("Criminal", "Not.Criminal", "No.Opinion")
 INFOmat
 barplot(t(INFOmat[2:3,]),beside=TRUE,legend=TRUE,names=c("Male","Female"),
-ylab="Percent of Population Opining")
+        ylab="Percent of Population Opining")
 barplot((INFOmat[2:3,]),beside=TRUE,legend=TRUE,ylab="Percent of Population Opining" )
 remove(INFO,INFOmat)
 

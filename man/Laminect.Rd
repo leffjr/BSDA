@@ -4,24 +4,23 @@
 \name{Laminect}
 \alias{Laminect}
 \title{Median costs of laminectomies at hospitals across North Carolina in 1992}
-\format{A data frame with 46 observations on the following 5 variables.
+\format{A data frame with 46 observations on the following 2 variables.
 \describe{
  \item{cost}{a numeric vector} 
- \item{class}{a numeric vector} 
- \item{Rural}{a numeric vector}
- \item{Regional}{a numeric vector} 
- \item{Metropol}{a numeric vector} 
+ \item{class}{a factor with levels \code{Rural} \code{Regional} \code{Metropol}
+ } 
  }}
+\usage{
+Laminect
+}
 \description{
 Data for Exercise 10.18
 }
 \examples{
 
 str(Laminect)
-attach(Laminect)
-boxplot(cost~class)
-anova(lm(cost~as.factor(class)))
-detach(Laminect)
+boxplot(Laminect$cost~Laminect$class)
+anova(lm(Laminect$cost~as.factor(Laminect$class)))
 
 }
 \references{

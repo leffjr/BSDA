@@ -9,17 +9,18 @@
 \item{gender}{a numeric vector} 
 \item{smoke}{a numeric vector} 
 }}
+\usage{
+Kidsmoke
+}
 \description{
 Data for Exercise 4.85
 }
 \examples{
 
 str(Kidsmoke)
-attach(Kidsmoke)
-table(gender,smoke)
-addmargins(table(gender,smoke))
-addmargins(table(gender,smoke)/1000)
-detach(Kidsmoke)
+table(Kidsmoke$gender,Kidsmoke$smoke)
+addmargins(table(Kidsmoke$gender,Kidsmoke$smoke))
+addmargins(table(Kidsmoke$gender,Kidsmoke$smoke)/1000)
 
 }
 \references{

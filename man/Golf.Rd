@@ -8,16 +8,17 @@
 \describe{ 
 \item{yards}{a numeric vector} 
 }}
+\usage{
+Golf
+}
 \description{
 Data for Exercise 5.24
 }
 \examples{
 
 str(Golf)
-attach(Golf)
-stem(yards)
-EDA(yards)
-detach(Golf)
+stem(Golf$yards)
+EDA(Golf$yards)
 
 }
 \references{

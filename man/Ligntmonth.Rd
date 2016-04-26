@@ -14,15 +14,16 @@
 \item{injuries}{a numeric vector}
 \item{damage}{a numeric vector} 
 }}
+\usage{
+Ligntmonth
+}
 \description{
 Data for Exercise 2.6
 }
 \examples{
 
 str(Ligntmonth)
-attach(Ligntmonth)
-plot(damage,deaths)
-detach(Ligntmonth)
+plot(Ligntmonth$damage,Ligntmonth$deaths)
 
 }
 \references{

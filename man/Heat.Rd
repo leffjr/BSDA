@@ -14,22 +14,18 @@ households}
 \item{All.US}{a numeric vector} 
 \item{Not.Rese}{a numeric vector} 
 }}
+\usage{
+Heat
+}
 \description{
 Data for Exercise 1.29
 }
 \examples{
 
-str(Heat)
-attach(Heat)
-MAT <- cbind(Reserv, All.US, Not.Rese) 
-row.names(MAT) <- c("Utility Gas","LP bottled Gas","Electricity",
-"Fuel Oil","Wood","Other Fuel")
-MAT
-barplot(t(MAT),beside=TRUE,legend=TRUE,main="Heating of American Indian Homes")
-sum(Reserv)
-sum(All.US)
-sum(Not.Rese)
-detach(Heat)
+#barplot(t(Heat),beside=TRUE,legend=TRUE,main="Heating of American Indian Homes")
+sum(Heat$Reserv)
+sum(Heat$All.US)
+sum(Heat$Not.Rese)
 
 }
 \references{

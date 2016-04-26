@@ -8,15 +8,16 @@
 \describe{ 
 \item{score}{a numeric vector} 
 }}
+\usage{
+Entrance
+}
 \description{
 Data for Example 1.8
 }
 \examples{
 
 str(Entrance)
-attach(Entrance)
-stem(score)
-detach(Entrance)
+stem(Entrance$score)
 
 }
 \references{

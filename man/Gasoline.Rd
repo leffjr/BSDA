@@ -8,16 +8,18 @@
 \describe{ 
 \item{price}{a numeric vector} 
 }}
+\usage{
+Gasoline
+}
 \description{
 Data for Exercise 1.45
 }
 \examples{
 
-str(Gasoline)
-attach(Gasoline)
-stem(price)
-detach(Gasoline)
 
+Gasoline
+str(Gasoline)
+stem(Gasoline$price)
 }
 \references{
 Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.

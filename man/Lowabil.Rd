@@ -4,26 +4,25 @@
 \name{Lowabil}
 \alias{Lowabil}
 \title{Reading skills of 24 matched low ability students}
-\format{A data frame with 12 observations on the following 3 variables.
+\format{A data frame with 12 observations on the following 2 variables.
 \describe{ 
-\item{Pair}{a numeric vector} 
 \item{Experimt}{a numeric vector} 
 \item{Control}{a numeric vector} 
 }}
+\usage{
+Lowabil
+}
 \description{
 Data for Example 7.18
 }
 \examples{
 
 str(Lowabil)
-attach(Lowabil)
-DIF <- Experimt - Control
-qqnorm(DIF)
+DIF <- Lowabil$experiment - Lowabil$control
+qqnorm(DIF) #error has no y 
 qqline(DIF)
 shapiro.test(DIF)
-t.test(Experimt,Control,paired=TRUE)
-detach(Lowabil)
-remove(DIF)
+t.test(Lowabil$experiment,Lowabil$control,paired=TRUE)
 
 }
 \references{

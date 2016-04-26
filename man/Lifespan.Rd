@@ -4,28 +4,27 @@
 \name{Lifespan}
 \alias{Lifespan}
 \title{Life span of electronic components used in a spacecraft versus heat}
-\format{A data frame with 6 observations on the following 4 variables.
+\format{A data frame with 6 observations on the following 2 variables.
 \describe{ 
 \item{heat}{a numeric vector} 
 \item{life}{a numeric vector} 
-\item{RESI1}{a numeric vector}
-\item{FITS1}{a numeric vector} 
 }}
+\usage{
+Lifespan
+}
 \description{
 Data for Exercise 2.4, 2.37, and 2.49
 }
 \examples{
 
 str(Lifespan)
-attach(Lifespan)
-plot(heat,life)
-model <- lm(life~heat)
+plot(Lifespan$heat,Lifespan$life)
+model <- lm(Lifespan$life~Lifespan$heat)
 model
 resid(model)
 sum((resid(model))^2)
 anova(model)
 # plot(model)  # Used for diagnostic purposes
-detach(Lifespan)
 
 }
 \references{

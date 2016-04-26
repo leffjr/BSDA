@@ -33,17 +33,18 @@ Francisco, CA} \code{Seattle, WA} \code{Spokane, WA} \code{St Louis, MO}
 \item{X2000}{a numeric vector}
 \item{difference}{a numeric vector} 
 }}
+\usage{
+Homes
+}
 \description{
 Data for Statistical Insight Chapter 5
 }
 \examples{
 
 str(Homes)
-attach(Homes)
-EDA(X2000)
-boxplot(X1994,X2000,names=c("1994","2000"),col=c("red","blue"),ylab="Cost")
-boxplot(X2000~Region)
-detach(Homes)
+EDA(Homes$X2000)
+boxplot(Homes$X1994,Homes$X2000,names=c("1994","2000"),col=c("red","blue"),ylab="Cost")
+boxplot(Homes$X2000~Homes$Region)
 
 }
 \references{

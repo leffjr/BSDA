@@ -8,15 +8,16 @@
 \describe{ 
 \item{survival}{a numeric vector} 
 }}
+\usage{
+Lethal
+}
 \description{
 Data for Example 6.12
 }
 \examples{
 
 str(Lethal)
-attach(Lethal)
-SIGN.test(survival,md=45,alternative="less")
-detach(Lethal)
+SIGN.test(Lethal$survival,md=45,alternative="less")
 
 }
 \references{

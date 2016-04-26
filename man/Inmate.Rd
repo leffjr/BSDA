@@ -13,16 +13,17 @@
 \item{cocaine}{a numeric vector} 
 \item{marijuan}{a numeric vector} 
 }}
+\usage{
+Inmate
+}
 \description{
 Data for Statistical Insight Chapter 8
 }
 \examples{
 
 str(Inmate)
-attach(Inmate)
 Inmate
 chisq.test(Inmate[,2:5])
-detach(Inmate)
 
 }
 \references{

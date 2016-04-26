@@ -8,15 +8,16 @@
 \describe{ 
 \item{velocity}{a numeric vector} 
 }}
+\usage{
+Galaxie
+}
 \description{
 Data for Example 5.2
 }
 \examples{
 
 str(Galaxie)
-attach(Galaxie)
-EDA(velocity)
-detach(Galaxie)
+EDA(Galaxie$velocity)
 
 }
 \references{

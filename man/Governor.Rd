@@ -22,15 +22,16 @@ Virginia} \code{Wisconsin} \code{Wyoming}}
 \item{X1994salary}{a numeric vector} 
 \item{X1999salary}{a numeric vector} 
 }}
+\usage{
+Governor
+}
 \description{
 Data for Exercise 5.112
 }
 \examples{
 
 str(Governor)
-attach(Governor)
-EDA(X1999salary)
-detach(Governor)
+EDA(Governor$X1999salary)
 
 }
 \references{

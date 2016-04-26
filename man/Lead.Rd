@@ -10,15 +10,16 @@
 \item{exposed}{a numeric vector} 
 \item{control}{a numeric vector} 
 }}
+\usage{
+Lead
+}
 \description{
 Data for Example 1.17
 }
 \examples{
 
 str(Lead)
-attach(Lead)
-boxplot(exposed,control, names=c("Exposed","Control"),col=c("red","blue"))
-detach(Lead)
+boxplot(Lead$exposed,Lead$control, names=c("Exposed","Control"),col=c("red","blue"))
 
 }
 \references{

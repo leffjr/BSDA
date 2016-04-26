@@ -19,17 +19,18 @@ Indianapolis 500 race}
 \item{starts}{a numeric vector} 
 \item{group}{a numeric vector} 
 }}
+\usage{
+Indy500
+}
 \description{
 Data for Exercises 7.11 and 7.36
 }
 \examples{
 
 str(Indy500)
-attach(Indy500)
-stripchart(qualif~group, method="stack",pch=19,col=c("red","blue"))
-boxplot(qualif~group)
-t.test(qualif~group)
-detach(Indy500)
+stripchart(Indy500$qualif~Indy500$group, method="stack",pch=19,col=c("red","blue"))
+boxplot(Indy500$qualif~Indy500$group)
+t.test(Indy500$qualif~Indy500$group)
 
 }
 \references{

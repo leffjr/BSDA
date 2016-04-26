@@ -12,19 +12,19 @@
 \item{Partial}{a numeric vector} 
 \item{None}{a numeric vector} 
 }}
+\usage{
+Hodgkin
+}
 \description{
 Data for Exercise 2.77
 }
 \examples{
 
 str(Hodgkin)
-attach(Hodgkin)
 HOD <- as.matrix(Hodgkin[,2:4])
-rownames(HOD) <- Histological
+rownames(HOD) <- Hodgkin$Histological
 HOD
 barplot(t(HOD),legend=TRUE,beside=TRUE)
-detach(Hodgkin)
-remove(HOD)
 
 }
 \references{

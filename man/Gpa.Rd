@@ -9,23 +9,23 @@
 \item{HSGPA}{a numeric vector} 
 \item{CollGPA}{a numeric vector} 
 }}
+\usage{
+Gpa
+}
 \description{
 Data for Exercise 2.13
 }
 \examples{
 
 str(Gpa)
-attach(Gpa)
-plot(HSGPA,CollGPA)
-model <- lm(CollGPA~HSGPA)
+plot(Gpa$HSGPA,Gpa$CollGPA)
+model <- lm(Gpa$CollGPA~Gpa$HSGPA)
 abline(model)
 model
 r <- resid(model)
 yhat <- fitted(model)
-Table2.1 <- cbind(HSGPA,CollGPA,yhat,r)
+Table2.1 <- cbind(Gpa$HSGPA,Gpa$CollGPA,yhat,r)
 Table2.1
-remove(r,yhat,model,Table2.1)
-detach(Gpa)
 
 }
 \references{

@@ -8,15 +8,16 @@
 \describe{ 
 \item{mileage}{a numeric vector} 
 }}
+\usage{
+Honda
+}
 \description{
 Data for Statistical Insight Chapter 6
 }
 \examples{
 
 str(Honda)
-attach(Honda)
-t.test(mileage,mu=40,alternative="less")
-detach(Honda)
+t.test(Honda$mileage,mu=40,alternative="less")
 
 }
 \references{

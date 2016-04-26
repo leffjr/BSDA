@@ -10,16 +10,17 @@ school students}
 \item{Private}{a numeric vector} 
 \item{Public}{a numeric vector} 
 }}
+\usage{
+Homework
+}
 \description{
 Data for Exercise 7.78
 }
 \examples{
 
 str(Homework)
-attach(Homework)
-boxplot(Private,Public)
-t.test(Private,Public,conf.level=.98)
-detach(Homework)
+boxplot(Homework$Private,Homework$Public)
+t.test(Homework$Private,Homework$Public,conf.level=.98)
 
 }
 \references{

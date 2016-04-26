@@ -1,5 +1,4 @@
-# test changes and input data sets
-## all variables lowercase, all data sets start with capital letter and then lowercase rest of when read into R
+"Fabric is where I stopped looking at data for variables"
 
 # Script data rework Start 3/24/16
 Abbey <- read.csv('abbey.csv')
@@ -475,7 +474,7 @@ devtools::use_data(Darwin, overwrite = TRUE)
 
 Earthqk <- read.csv("~/BSDA/data-raw/EARTHQK.csv")
 devtools::use_data(Earthqk, overwrite = TRUE)
-EARTHQK
+Earthqk
 str(Earthqk)
 Earthqk$severity
 EDA(Earthqk$severity)
@@ -501,7 +500,6 @@ plot(Eggs$feed,Eggs$eggs)
 model <- lm(Eggs$eggs~Eggs$feed)
 abline(model)
 summary(model)
-remove(model)
 
 Elderly <- read.csv("~/BSDA/data-raw/ELDERLY.csv")
 devtools::use_data(Elderly, overwrite = TRUE)
@@ -524,8 +522,8 @@ Engineer <- read.csv("~/BSDA/data-raw/ENGINEER.csv")
 devtools::use_data(Engineer, overwrite = TRUE)
 Engineer
 str(Engineer)
-boxplot(Engineer$salary~Engineer$university) #INVALID TYPE (NULL)
-kruskal.test(Engineer$salary~as.factor(Engineer$university))
+boxplot(Engineer$Salary~Engineer$University)
+kruskal.test(Engineer$Salary~Engineer$University)
 
 Entrance <- read.csv("~/BSDA/data-raw/ENTRANCE.csv")
 devtools::use_data(Entrance, overwrite = TRUE)
@@ -557,7 +555,6 @@ Exercise
 str(Exercise)
 stem(Exercise$loss)
 
-#cannot computer exact p-value wth ties error for wilcox.test
 Fabric <- read.csv("~/BSDA/data-raw/FABRIC.csv")
 devtools::use_data(Fabric, overwrite = TRUE)
 str(Fabric)
@@ -609,8 +606,9 @@ EDA(Fertility$rate)
 
 Firstchi <- read.csv("~/BSDA/data-raw/FIRSTCHI.csv")
 devtools::use_data(Firstchi, overwrite = TRUE)
-Firstchi #ADD EXAMPLES
-
+Firstchi 
+str(Firstchi)
+EDA(Firstchi$age)
 
 Fish <- read.csv("~/BSDA/data-raw/FISH.csv")
 devtools::use_data(Fish, overwrite = TRUE)
@@ -632,6 +630,8 @@ qqnorm(DIF)
 qqline(DIF)
 shapiro.test(DIF)
 t.test(Fitness$After,Fitness$Before,paired=TRUE,alternative="greater")
+
+FLORIDA2000 <- as.data.frame(Florida2000, colnames = c("county", "candidate"))
 
 Florida2000 <- read.csv("~/BSDA/data-raw/FLORIDA2000.csv")
 devtools::use_data(Florida2000, overwrite = TRUE)
@@ -710,9 +710,10 @@ German <- read.csv("~/BSDA/data-raw/GERMAN.csv")
 devtools::use_data(German, overwrite = TRUE)
 German # same wilcox problem
 str(German)
-qqnorm(German$differ)
-qqline(German$differ)
-shapiro.test(German$differ)
+dif <- (German$Before - German$After)
+qqnorm(dif)
+qqline(dif)
+shapiro.test(dif)
 wilcox.test(German$Before,German$After,paired=TRUE)
 
 Golf <- read.csv("~/BSDA/data-raw/GOLF.csv")
@@ -774,21 +775,15 @@ Groupabc <- read.csv("~/BSDA/data-raw/GROUPABC.csv")
 devtools::use_data(Groupabc, overwrite = TRUE)
 Groupabc
 str(Groupabc)
-STACKED <-stack(Groupabc)
-STACKED[1:5,]
-boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
-anova(lm(values~ind,data=STACKED)) #error in contrasts
-remove(STACKED)
+boxplot(Value~Group,col=c("red","blue","green"),data=Groupabc)
+anova(lm(Value~Group,data=Groupabc))
 
 Groups <- read.csv("~/BSDA/data-raw/GROUPS.csv")
 devtools::use_data(Groups, overwrite = TRUE)
 Groups
 str(Groups)
-STACKED <-stack(Groups)
-STACKED[1:5,]
-boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
-anova(lm(values~ind,data=STACKED)) #error in contrasts
-remove(STACKED)
+boxplot(Score~Group,col=c("red","blue","green"),data=Groups)
+anova(lm(Score~Group,data=Groups)) 
 
 Gym <- read.csv("~/BSDA/data-raw/GYM.csv")
 devtools::use_data(Gym, overwrite = TRUE)
@@ -801,13 +796,14 @@ cor(Gym$age,Gym$number)
 
 Habits <- read.csv("~/BSDA/data-raw/HABITS.csv")
 devtools::use_data(Habits, overwrite = TRUE)
-Habits #same wilcox problem
+Habits
 str(Habits)
-qqnorm(Habits$differ)
-qqline(Habits$differ)
-shapiro.test(Habits$differ)
-t.test(B,A,paired=TRUE,alternative="less") #objects B and A 
-wilcox.test(B,A,paired=TRUE,alternative="less")
+difference <- (Habits$B - Habits$A)
+qqnorm(difference)
+qqline(difference)
+shapiro.test(difference)
+t.test(Habits$B,Habits$A,paired=TRUE,alternative="less")
+wilcox.test(Habits$B,Habits$A,paired=TRUE,alternative="less")
 
 Haptoglo <- read.csv("~/BSDA/data-raw/HAPTOGLO.csv") 
 devtools::use_data(Haptoglo, overwrite = TRUE)
@@ -1015,7 +1011,7 @@ devtools::use_data(Iqgpa, overwrite = TRUE)
 Iqgpa 
 str(Iqgpa)
 plot(Iqgpa$IQ,Iqgpa$GPA)
-model <- lm(Iqgpa$GPA~Iqgpa$IQ) #error
+model <- lm(Iqgpa$GPA~Iqgpa$IQ) 
 abline(model)
 summary(model)
 remove(model)
@@ -1137,17 +1133,17 @@ Longtail <- read.csv("~/BSDA/data-raw/LONGTAIL.csv")
 devtools::use_data(Longtail, overwrite = TRUE)
 Longtail
 str(Longtail)
-boxplot(Longtail$score~Longtail$Group) #error invalid type (null)
-kruskal.test(Longtail$score~as.factor(Longtail$Group))
-anova(lm(Longtail$score~as.factor(Longtail$Group)))
+boxplot(Longtail$Score~Longtail$Group)
+kruskal.test(Longtail$Score~as.factor(Longtail$Group))
+anova(lm(Longtail$Score~as.factor(Longtail$Group)))
 
 Lowabil <- read.csv("~/BSDA/data-raw/LOWABIL.csv")
 devtools::use_data(Lowabil, overwrite = TRUE)
 Lowabil 
 str(Lowabil)
-DIF <- Lowabil$Experimt - Lowabil$Control
+DIF <- Lowabil$experiment - Lowabil$control
 qqnorm(DIF) #error has no y 
 qqline(DIF)
 shapiro.test(DIF)
-t.test(Lowabil$Experimt,Lowabil$Control,paired=TRUE)
+t.test(Lowabil$experiment,Lowabil$control,paired=TRUE)
 

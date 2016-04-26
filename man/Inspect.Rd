@@ -13,16 +13,17 @@ dealer} \code{tire store}}
 \item{X70.85}{a numeric vector} 
 \item{great85}{a numeric vector} 
 }}
+\usage{
+Inspect
+}
 \description{
 Data for Exercise 5.89
 }
 \examples{
 
 str(Inspect)
-attach(Inspect)
 Inspect
 chisq.test(Inspect[,2:4])
-detach(Inspect)
 
 }
 \references{

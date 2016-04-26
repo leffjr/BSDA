@@ -4,25 +4,18 @@
 \name{Engineer}
 \alias{Engineer}
 \title{Salaries after 10 years for graduates of three different universities}
-\format{A data frame with 51 observations on the following 6 variables.
-\describe{ 
-\item{UnivA}{a numeric vector} 
-\item{UnivB}{a numeric vector} 
-\item{UnivC}{a numeric vector}
-\item{salary}{a numeric vector} 
-\item{university}{a numeric vector} 
-\item{ranks}{a numeric vector} 
-}}
+\format{An object of class \code{data.frame} with 51 rows and 3 columns.}
+\usage{
+Engineer
+}
 \description{
 Data for Example 10.7
 }
 \examples{
 
 str(Engineer)
-attach(Engineer)
-boxplot(salary~university)
-kruskal.test(salary~as.factor(university))
-detach(Engineer)
+boxplot(Engineer$Salary~Engineer$University)
+kruskal.test(Engineer$Salary~Engineer$University)
 
 }
 \references{

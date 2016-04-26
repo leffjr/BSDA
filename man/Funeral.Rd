@@ -12,16 +12,17 @@
 \item{Average}{a numeric vector} 
 \item{More}{a numeric vector} 
 }}
+\usage{
+Funeral
+}
 \description{
 Data for Exercise 8.54
 }
 \examples{
 
 str(Funeral)
-attach(Funeral)
 Funeral
 chisq.test(Funeral[,2:4])
-detach(Funeral)
 
 }
 \references{

@@ -9,17 +9,18 @@
 \item{Time}{a numeric vector} 
 \item{Eruption}{a numeric vector} 
 }}
+\usage{
+Faithful
+}
 \description{
 Data for Exercise 5.12 and 5.111
 }
 \examples{
 
 str(Faithful)
-attach(Faithful)
-hist(Time,prob=TRUE,xlab="Waiting time between eruptions",col="tomato")
-lines(density(Time),col="red",lwd=3)
-t.test(Time)$conf
-detach(Faithful)
+hist(Faithful$Time,prob=TRUE,xlab="Waiting time between eruptions",col="tomato")
+lines(density(Faithful$Time),col="red",lwd=3)
+t.test(Faithful$Time)$conf
 
 }
 \references{

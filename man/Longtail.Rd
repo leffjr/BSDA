@@ -4,26 +4,25 @@
 \name{Longtail}
 \alias{Longtail}
 \title{Long-tailed distributions to illustrate Kruskal Wallis test}
-\format{A data frame with 60 observations on the following 6 variables.
+\format{A data frame with 60 observations on the following 3 variables.
 \describe{ 
-\item{GroupA}{a numeric vector} 
-\item{GroupB}{a numeric vector} 
-\item{GroupC}{a numeric vector}
+\item{Group}{A factor with levels \code{GroupA} \code{GroupB} \code{GroupC}
+}
 \item{score}{a numeric vector} 
-\item{Group}{a numeric vector} 
 \item{Ranks}{a numeric vector} 
 }}
+\usage{
+Longtail
+}
 \description{
 Data for Exercise 10.45
 }
 \examples{
 
 str(Longtail)
-attach(Longtail)
-boxplot(score~Group)
-kruskal.test(score~as.factor(Group))
-anova(lm(score~as.factor(Group)))
-detach(Longtail)
+boxplot(Longtail$Score~Longtail$Group)
+kruskal.test(Longtail$Score~as.factor(Longtail$Group))
+anova(lm(Longtail$Score~as.factor(Longtail$Group)))
 
 }
 \references{

@@ -11,20 +11,20 @@ without a softener}
 \item{With}{a numeric vector} 
 \item{Without}{a numeric vector} 
 }}
+\usage{
+Fabric
+}
 \description{
 Data for Exercise 7.21
 }
 \examples{
 
 str(Fabric)
-attach(Fabric)
-DIF <- With - Without
+DIF <- Fabric$With - Fabric$Without
 qqnorm(DIF)
 qqline(DIF)
 shapiro.test(DIF)
-wilcox.test(With,Without,paired=TRUE,alternative="greater")
-detach(Fabric)
-remove(DIF)
+wilcox.test(Fabric$With,Fabric$Without,paired=TRUE,alternative="greater")
 
 }
 \references{

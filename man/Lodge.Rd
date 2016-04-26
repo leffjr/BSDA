@@ -4,25 +4,24 @@
 \name{Lodge}
 \alias{Lodge}
 \title{Measured traffic at three prospective locations for a motor lodge}
-\format{A data frame with 45 observations on the following 6 variables.
+\format{A data frame with 45 observations on the following 3 variables.
 \describe{ 
-\item{SiteA}{a numeric vector} 
-\item{SiteB}{a numeric vector} 
-\item{SiteC}{a numeric vector}
+\item{Site}{a factor with levels \code{SiteA} \code{SiteB} \code{SiteC}
+}
 \item{Traffic}{a numeric vector} 
-\item{Site}{a numeric vector} 
 \item{Ranks}{a numeric vector} 
 }}
+\usage{
+Lodge
+}
 \description{
 Data for Exercise 10.33
 }
 \examples{
 
 str(Lodge)
-attach(Lodge)
-boxplot(Traffic~Site)
-anova(lm(Traffic~as.factor(Site)))
-detach(Lodge)
+boxplot(Lodge$Traffic~Lodge$Site)
+anova(lm(Lodge$Traffic~as.factor(Lodge$Site)))
 
 }
 \references{

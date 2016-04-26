@@ -9,19 +9,20 @@
 \item{Before}{a numeric vector} 
 \item{After}{a numeric vector} 
 }}
+\usage{
+Fitness
+}
 \description{
 Data for Exercise 7.71
 }
 \examples{
 
 str(Fitness)
-attach(Fitness)
-DIF <- After - Before
+DIF <- Fitness$After - Fitness$Before
 qqnorm(DIF)
 qqline(DIF)
 shapiro.test(DIF)
-t.test(After,Before,paired=TRUE,alternative="greater")
-detach(Fitness)
+t.test(Fitness$After,Fitness$Before,paired=TRUE,alternative="greater")
 
 }
 \references{

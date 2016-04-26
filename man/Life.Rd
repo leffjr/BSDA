@@ -10,19 +10,20 @@
 \item{Men}{a numeric vector} 
 \item{Women}{a numeric vector} 
 }}
+\usage{
+Life
+}
 \description{
 Data for Exercise 1.31
 }
 \examples{
 
 str(Life)
-attach(Life)
-plot(year,Men,type="l",ylim=c(min(Men,Women),max(Men,Women)),col="blue",
+plot(Life$year,Life$Men,type="l",ylim=c(min(Life$Men,Life$Women),max(Life$Men,Life$Women)),col="blue",
 main="Life Expectancy versus Year",ylab="Age",xlab="Year")
-lines(year,Women,col="red")
+lines(Life$year,Life$Women,col="red")
 text(1955,65,"Men",col="blue")
 text(1955,70,"Women",col="red")
-detach(Life)
 
 }
 \references{

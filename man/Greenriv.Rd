@@ -9,16 +9,17 @@ Mountains}
 \describe{ 
 \item{thick}{a numeric vector} 
 }}
+\usage{
+Greenriv
+}
 \description{
 Data for Exercise 6.57
 }
 \examples{
 
 str(Greenriv)
-attach(Greenriv)
-EDA(thick)
-SIGN.test(thick,md=7.3,alternative="greater")
-detach(Greenriv)
+EDA(Greenriv$thick)
+SIGN.test(Greenriv$thick,md=7.3,alternative="greater")
 
 }
 \references{

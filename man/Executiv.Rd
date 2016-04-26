@@ -8,15 +8,18 @@
 \describe{ 
 \item{Age}{a numeric vector} 
 }}
+\usage{
+Executiv
+}
 \description{
 Data for Exercise 1.104
 }
 \examples{
 
+Executiv <- read.csv("~/BSDA/data-raw/EXECUTIV.csv")
+Executiv
 str(Executiv)
-attach(Executiv)
-EDA(Age)
-detach(Executiv)
+EDA(Executiv$Age)
 
 }
 \references{

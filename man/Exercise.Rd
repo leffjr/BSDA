@@ -8,15 +8,16 @@
 \describe{ 
 \item{loss}{a numeric vector} 
 }}
+\usage{
+Exercise
+}
 \description{
 Data for Exercise 1.44
 }
 \examples{
 
 str(Exercise)
-attach(Exercise)
-stem(loss)
-detach(Exercise)
+stem(Exercise$loss)
 
 }
 \references{

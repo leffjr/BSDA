@@ -9,16 +9,17 @@
 \item{under35}{a numeric vector} 
 \item{over35}{a numeric vector} 
 }}
+\usage{
+Leader
+}
 \description{
 Data for Exercise 7.31
 }
 \examples{
 
 str(Leader)
-attach(Leader)
-boxplot(under35,over35,names=c("Under 35","Over 35"),col=c("green","brown"))
-t.test(under35,over35)
-detach(Leader)
+boxplot(Leader$under35,Leader$over35,names=c("Under 35","Over 35"),col=c("green","brown"))
+t.test(Leader$under35,Leader$over35)
 
 }
 \references{

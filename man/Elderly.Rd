@@ -22,17 +22,18 @@ Dakota} \code{Ohio} \code{Oklahoma} \code{Oregon} \code{Pennsylvania}
 \item{X85percent}{a numeric vector} 
 \item{X98percent}{a numeric vector} 
 }}
+\usage{
+Elderly
+}
 \description{
 Data for Exercise 1.92 and 2.61
 }
 \examples{
 
 str(Elderly)
-attach(Elderly)
-stripchart(x=list(X98percent,X85percent),method="stack",pch=19,
-col=c("red","blue"),group.names=c("1998","1985"))
-cor(X98percent,X85percent)
-detach(Elderly)
+stripchart(x=list(Elderly$X98percent,Elderly$X85percent),method="stack",pch=19,
+           col=c("red","blue"),group.names=c("1998","1985"))
+cor(Elderly$X98percent,Elderly$X85percent)
 
 }
 \references{

@@ -13,16 +13,17 @@ Grand Banks in 1920}
 \item{Newfound}{a numeric vector}
 \item{GrandBk}{a numeric vector} 
 }}
+\usage{
+Iceberg
+}
 \description{
 Data for Exercise 2.46 and 2.60
 }
 \examples{
 
 str(Iceberg)
-attach(Iceberg)
-plot(GrandBk,Newfound)
-abline(lm(Newfound~GrandBk))
-detach(Iceberg)
+plot(Iceberg$GrandBk,Iceberg$Newfound)
+abline(lm(Iceberg$Newfound~Iceberg$GrandBk))
 
 }
 \references{

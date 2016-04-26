@@ -9,19 +9,19 @@
 \item{WSPT}{a numeric vector} 
 \item{satisfac}{a numeric vector} 
 }}
+\usage{
+Jobsat
+}
 \description{
 Data for Exercise 9.60
 }
 \examples{
 
 str(Jobsat)
-attach(Jobsat)
-plot(WSPT,satisfac)
-model <- lm(satisfac~WSPT)
+plot(Jobsat$WSPT,Jobsat$satisfac)
+model <- lm(Jobsat$satisfac~Jobsat$WSPT)
 abline(model)
 summary(model)
-detach(Jobsat)
-remove(model)
 
 }
 \references{

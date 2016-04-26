@@ -33,16 +33,17 @@ JOHNS} \code{ST. LUCIE} \code{SUMTER} \code{SUWANNEE} \code{TAYLOR}
 \item{PHILLIPS}{a numeric vector}
 \item{Total}{a numeric vector} 
 }}
+\usage{
+Florida2000
+}
 \description{
 Data for Statistical Insight Chapter 2
 }
 \examples{
 
 str(Florida2000)
-attach(Florida2000)
-plot(Total,BUCHANAN,xlab="Total votes cast (in thousands)",
-ylab="Votes for Buchanan")
-detach(Florida2000)
+plot(Florida2000$Total,Florida2000$BUCHANAN,xlab="Total votes cast (in thousands)",
+     ylab="Votes for Buchanan")
 
 }
 \references{

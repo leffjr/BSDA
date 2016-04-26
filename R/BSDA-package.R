@@ -1,7 +1,3 @@
-#final changes only
-#instead of NULL at end of each documentation write name of data set in quotation marks
-#copy latec for factor levels?
-
 #############################################################################
 #' @import lattice 
 #' @importFrom graphics abline axis box boxplot dotchart hist legend lines mtext par plot plot.design points polygon segments text title
@@ -2910,17 +2906,12 @@ NULL
 #' Duxbury
 #' @keywords datasets
 #' @examples
-#'Earthqk <- read.csv("~/BSDA/data-raw/EARTHQK.csv") 
-#' EARTHQK
-#'str(Earthqk)
-#'Earthqk$severity
-#'EDA(Earthqk$severity)
-#'t.test(Earthqk$severity,mu=100,alternative="greater")
-NULL
-
-
-
-
+#' 
+#' str(Earthqk)
+#' Earthqk$severity
+#' EDA(Earthqk$severity)
+#' t.test(Earthqk$severity,mu=100,alternative="greater")
+"Earthqk"
 
 #' Crime rates versus the percent of the population without a high school
 #' degree
@@ -2953,16 +2944,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' Educat <- read.csv("~/BSDA/data-raw/Educat.csv")
 #' str(Educat)
 #' plot(Educat$nodegree,Educat$crime,xlab="No Crime",ylab="Violent Crime Rate per 100,000")
 #' 
 #' 
-NULL
-
-
-
-
+"Educat"
 
 #' Number of eggs versus amounts of feed supplement
 #' 
@@ -2971,7 +2957,7 @@ NULL
 #' 
 #' @name Eggs
 #' @docType data
-#' @format A data frame with 2 observations on the following 7 variables.
+#' @format A data frame with 12 observations on the following 2 variables.
 #' \describe{ 
 #' \item{feed}{a numeric vector} 
 #' \item{eggs}{a numeric vector} 
@@ -2981,20 +2967,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' Eggs <- read.csv("~/BSDA/data-raw/EGGS.csv")
 #' str(Eggs)
-#' attach(Eggs)
-#' plot(feed,eggs)
-#' model <- lm(eggs~feed)
-#' plot(Eggs$feed,Eggs$eggs)
 #' model <- lm(Eggs$eggs~Eggs$feed)
-#' remove(model)
+#' plot(Eggs$feed,Eggs$eggs)
 #' 
-NULL
-
-
-
-
+"Eggs"
 
 #' Percent of the population over the age of 65
 #' 
@@ -3026,18 +3003,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' Elderly <- read.csv("~/BSDA/data-raw/ELDERLY.csv")
-#' Elderly
 #' str(Elderly)
 #' stripchart(x=list(Elderly$X98percent,Elderly$X85percent),method="stack",pch=19,
 #'            col=c("red","blue"),group.names=c("1998","1985"))
 #' cor(Elderly$X98percent,Elderly$X85percent)
 #' 
-NULL
-
-
-
-
+"Elderly"
 
 #' Amount of energy consumed by homes versus their sizes
 #' 
@@ -3046,32 +3017,23 @@ NULL
 #' 
 #' @name Energy
 #' @docType data
-#' @format A data frame with 12 observations on the following 5 variables.
+#' @format A data frame with 12 observations on the following 2 variables.
 #' \describe{ 
 #' \item{Size}{a numeric vector} 
 #' \item{kilowatt}{a numeric vector} 
-#' \item{SRES1}{a numeric vector}
-#' \item{FITS1}{a numeric vector} 
-#' \item{Residuals}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
 #' @keywords datasets
 #' @examples
 #' 
-#' Energy <- read.csv("~/BSDA/data-raw/ENERGY.csv")
-#' Energy
 #' str(Energy)
 #' plot(Energy$Size,Energy$kilowatt)
 #' cor(Energy$Size,Energy$kilowatt)
 #' model <- lm(Energy$kilowatt~Energy$Size)
 #' plot(Energy$Size,resid(model))
 #' 
-NULL
-
-
-
-
+"Energy"
 
 #' Salaries after 10 years for graduates of three different universities
 #' 
@@ -3082,11 +3044,9 @@ NULL
 #' @docType data
 #' @format A data frame with 51 observations on the following 6 variables.
 #' \describe{ 
-#' \item{UnivA}{a numeric vector} 
-#' \item{UnivB}{a numeric vector} 
-#' \item{UnivC}{a numeric vector}
+#' \item{University}{a factor with levels \code{UnivA}}
+#' \code{UnivB} \code{UnivC}}
 #' \item{salary}{a numeric vector} 
-#' \item{university}{a numeric vector} 
 #' \item{ranks}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
@@ -3095,16 +3055,10 @@ NULL
 #' @examples
 #' 
 #' str(Engineer)
-#' attach(Engineer)
-#' boxplot(salary~university)
-#' kruskal.test(salary~as.factor(university))
-#' detach(Engineer)
+#' boxplot(Engineer$Salary~Engineer$University)
+#' kruskal.test(Engineer$Salary~Engineer$University)
 #' 
-NULL
-
-
-
-
+"Engineer"
 
 #' College entrance exam scores for 24 high school seniors
 #' 
@@ -3123,22 +3077,16 @@ NULL
 #' @examples
 #' 
 #' str(Entrance)
-#' attach(Entrance)
-#' stem(score)
-#' detach(Entrance)
+#' stem(Entrance$score)
 #' 
-NULL
-
-
-
-
+"Entrance"
 
 #' Fuel efficiency ratings for compact vehicles in 2001
 #' 
 #' Data for Exercise 1.65
 #' 
 #' 
-#' @name Epaminicompact
+#' @name Epaminicompact #fix
 #' @docType data
 #' @format A data frame with 22 observations on the following 10 variables.
 #' \describe{ 
@@ -3239,16 +3187,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#' Executiv <- read.csv("~/BSDA/data-raw/EXECUTIV.csv")
+#' Executiv
 #' str(Executiv)
-#' attach(Executiv)
-#' EDA(Age)
-#' detach(Executiv)
+#' EDA(Executiv$Age)
 #' 
-NULL
-
-
-
-
+"Executiv"
 
 #' Weight loss for 30 members of an exercise program
 #' 
@@ -3267,15 +3211,9 @@ NULL
 #' @examples
 #' 
 #' str(Exercise)
-#' attach(Exercise)
-#' stem(loss)
-#' detach(Exercise)
+#' stem(Exercise$loss)
 #' 
-NULL
-
-
-
-
+"Exercise"
 
 #' Measures of softness of 10 different clothing garments washed with and
 #' without a softener
@@ -3297,19 +3235,13 @@ NULL
 #' @examples
 #' 
 #' str(Fabric)
-#' attach(Fabric)
-#' DIF <- With - Without
+#' DIF <- Fabric$With - Fabric$Without
 #' qqnorm(DIF)
 #' qqline(DIF)
 #' shapiro.test(DIF)
-#' wilcox.test(With,Without,paired=TRUE,alternative="greater")
-#' detach(Fabric)
-#' remove(DIF)
+#' wilcox.test(Fabric$With,Fabric$Without,paired=TRUE,alternative="greater")
 #' 
-NULL
-
-
-
+"Fabric"
 
 
 #' Waiting times between successive eruptions of the Old Faithful geyser
@@ -3330,16 +3262,11 @@ NULL
 #' @examples
 #' 
 #' str(Faithful)
-#' attach(Faithful)
-#' hist(Time,prob=TRUE,xlab="Waiting time between eruptions",col="tomato")
-#' lines(density(Time),col="red",lwd=3)
-#' t.test(Time)$conf
-#' detach(Faithful)
+#' hist(Faithful$Time,prob=TRUE,xlab="Waiting time between eruptions",col="tomato")
+#' lines(density(Faithful$Time),col="red",lwd=3)
+#' t.test(Faithful$Time)$conf
 #' 
-NULL
-
-
-
+"Faithful"
 
 
 #' Size of family versus cost per person per week for groceries
@@ -3360,13 +3287,12 @@ NULL
 #' @examples
 #' 
 #' str(Family)
-#' attach(Family)
-#' plot(Number,Cost)
-#' cor(Number,Cost)
-#' lm(Cost~Number)
-#' detach(Family)
+#' str(Family)
+#' plot(Family$Number,Family$Cost)
+#' cor(Family$Number,Family$Cost)
+#' lm(Family$Cost~Family$Number)
 #' 
-NULL
+"Family"
 
 
 
@@ -3379,13 +3305,11 @@ NULL
 #' 
 #' @name Ferraro1
 #' @docType data
-#' @format A data frame with 2 observations on the following 4 variables.
+#' @format A data frame with 1000 observations on the following 2 variables.
 #' \describe{ 
 #' \item{gender}{a factor with levels \code{Men}
 #' \code{Women}} 
-#' \item{Reag.Bs}{a numeric vector}
-#' \item{Mond.Fer}{a numeric vector} 
-#' \item{undecide}{a numeric vector} 
+#' \item{vote}{a factor with levels \code{bush} \code{ferraro} \code{undecided} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -3393,15 +3317,11 @@ NULL
 #' @examples
 #' 
 #' str(Ferraro1)
-#' attach(Ferraro1)
-#' Ferraro1
-#' chisq.test(Ferraro1[,2:4])
-#' detach(Ferraro1)
+#' T1 <- xtabs(~gender + vote, data = Ferraro1)
+#' T1
+#' chisq.test(T1)
 #' 
-NULL
-
-
-
+"Ferraro1"
 
 
 #' Choice of vice presidental candidate in 1984 by gender
@@ -3411,13 +3331,11 @@ NULL
 #' 
 #' @name Ferraro2
 #' @docType data
-#' @format A data frame with 2 observations on the following 4 variables.
+#' @format A data frame with 1000 observations on the following 2 variables.
 #' \describe{ 
 #' \item{gender}{a factor with levels \code{Men}
 #' \code{Women}} 
-#' \item{Bush}{a numeric vector} 
-#' \item{Ferraro}{a numeric vector} 
-#' \item{undecide}{a numeric vector} 
+#' \item{vote}{a factor with levels \code{bush} \code{ferraro} \code{undecided}  
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -3425,15 +3343,11 @@ NULL
 #' @examples
 #' 
 #' str(Ferraro2)
-#' attach(Ferraro2)
-#' Ferraro2
-#' chisq.test(Ferraro2[,2:4])
-#' detach(Ferraro2)
+#' T2 <- xtabs(~gender + vote, data = Ferraro2)
+#' T2
+#' chisq.test(T2)
 #' 
-NULL
-
-
-
+"Ferraro2"
 
 
 #' Fertility rates of all 50 states and DC
@@ -3466,15 +3380,13 @@ NULL
 #' @examples
 #' 
 #' str(Fertility)
-#' attach(Fertility)
 #' library(lattice)
-#' dotplot(State~rate)
-#' stem(rate)
-#' fivenum(rate)
-#' EDA(rate)
-#' detach(Fertility)
+#' dotplot(Fertility$State~Fertility$rate)
+#' stem(Fertility$rate)
+#' fivenum(Fertility$rate)
+#' EDA(Fertility$rate)
 #' 
-NULL
+"Fertility"
 
 
 
@@ -3497,13 +3409,9 @@ NULL
 #' @examples
 #' 
 #' str(Firstchi)
-#' attach(Firstchi)
-#' EDA(age)
-#' detach(Firstchi)
+#' EDA(Firstchi$age)
 #' 
-NULL
-
-
+"Firstchi"
 
 
 
@@ -3514,34 +3422,29 @@ NULL
 #' 
 #' @name Fish
 #' @docType data
-#' @format A data frame with 767 observations on the following 5 variables.
+#' @format A data frame with 1506 observations on the following 2 variables.
 #' \describe{ 
 #' \item{length}{a numeric vector} 
-#' \item{smalmesh}{a numeric vector} 
-#' \item{largmesh}{a numeric vector}
-#' \item{smallmesh}{a numeric vector} 
-#' \item{largemesh}{a numeric vector} 
+#' \item{State}{a factor with levels \code{smalmesh} \code{largemesh}
 #' }
+#' 
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
 #' @keywords datasets
 #' @examples
 #' 
 #' str(Fish)
-#' attach(Fish)
-#' median(smallmesh,na.rm=TRUE)
-#' median(largemesh)
-#' IQR(smallmesh,na.rm=TRUE)
-#' IQR(largemesh)
-#' SIGN.test(smallmesh,conf.level=.99)
-#' SIGN.test(largemesh,conf.level=.99)
-#' t.test(smallmesh,largemesh)
-#' detach(Fish)
+#' TF <- xtabs(~mesh + Length, data = Fish)
+#' TF
+#' median(TF[2,],na.rm=TRUE) #is.na applied to null error
+#' median(TF[1,])
+#' IQR(TF[2,],na.rm=TRUE)
+#' IQR(TF[1,])
+#' SIGN.test(TF[2,],conf.level=.99)
+#' SIGN.test(TF[1,],conf.level=.99)
+#' t.test(TF[2,],TF[1,])
 #' 
-NULL
-
-
-
+"Fish"
 
 
 #' Number of sit-ups before and after a physical fitness course
@@ -3562,15 +3465,13 @@ NULL
 #' @examples
 #' 
 #' str(Fitness)
-#' attach(Fitness)
-#' DIF <- After - Before
+#' DIF <- Fitness$After - Fitness$Before
 #' qqnorm(DIF)
 #' qqline(DIF)
 #' shapiro.test(DIF)
-#' t.test(After,Before,paired=TRUE,alternative="greater")
-#' detach(Fitness)
+#' t.test(Fitness$After,Fitness$Before,paired=TRUE,alternative="greater")
 #' 
-NULL
+"Fitness"
 
 
 
@@ -3618,12 +3519,10 @@ NULL
 #' @examples
 #' 
 #' str(Florida2000)
-#' attach(Florida2000)
-#' plot(Total,BUCHANAN,xlab="Total votes cast (in thousands)",
-#' ylab="Votes for Buchanan")
-#' detach(Florida2000)
+#' plot(Florida2000$Total,Florida2000$BUCHANAN,xlab="Total votes cast (in thousands)",
+#'      ylab="Votes for Buchanan")
 #' 
-NULL
+"Florida2000"
 
 
 
@@ -3656,15 +3555,10 @@ NULL
 #' @examples
 #' 
 #' str(Fluid)
-#' attach(Fluid)
-#' stem(X34kV)
-#' SIGN.test(X34kV)
-#' detach(Fluid)
+#' stem(Fluid$X34kV)
+#' SIGN.test(Fluid$X34kV)
 #' 
-NULL
-
-
-
+"Fluid"
 
 
 #' Annual food expenditures for 40 single households in Ohio
@@ -3684,14 +3578,9 @@ NULL
 #' @examples
 #' 
 #' str(Food)
-#' attach(Food)
-#' EDA(food)
-#' detach(Food)
+#' EDA(Food$food)
 #' 
-NULL
-
-
-
+"Food"
 
 
 #' Cholesterol values of 62 subjects in the Framingham Heart Study
@@ -3711,18 +3600,13 @@ NULL
 #' @examples
 #' 
 #' str(Framingh)
-#' attach(Framingh)
-#' stem(cholest)
-#' hist(cholest,prob=TRUE,ylim=c(0,.012))
-#' lines(density(cholest))
-#' boxplot(cholest,col="brown")
-#' sum(cholest>200&cholest<240)/length(cholest)
-#' detach(Framingh)
+#' stem(Framingh$cholest)
+#' hist(Framingh$cholest,prob=TRUE,ylim=c(0,.012))
+#' lines(density(Framingh$cholest))
+#' boxplot(Framingh$cholest,col="brown")
+#' sum(Framingh$cholest>200&Framingh$cholest<240)/length(Framingh$cholest)
 #' 
-NULL
-
-
-
+"Framingh"
 
 
 #' Ages of a random sample of 30 college freshmen
@@ -3742,14 +3626,9 @@ NULL
 #' @examples
 #' 
 #' str(Freshman)
-#' attach(Freshman)
-#' SIGN.test(age,md=19)
-#' detach(Freshman)
+#' SIGN.test(Freshman$age,md=19)
 #' 
-NULL
-
-
-
+"Freshman"
 
 
 #' Cost of funeral by region of country
@@ -3773,15 +3652,10 @@ NULL
 #' @examples
 #' 
 #' str(Funeral)
-#' attach(Funeral)
 #' Funeral
 #' chisq.test(Funeral[,2:4])
-#' detach(Funeral)
 #' 
-NULL
-
-
-
+"Funeral"
 
 
 #' Velocities of 82 galaxies in the Corona Borealis region
@@ -3801,14 +3675,9 @@ NULL
 #' @examples
 #' 
 #' str(Galaxie)
-#' attach(Galaxie)
-#' EDA(velocity)
-#' detach(Galaxie)
+#' EDA(Galaxie$velocity)
 #' 
-NULL
-
-
-
+"Galaxie"
 
 
 #' Results of a Gallup poll on possession of marijuana as a criminal offense
@@ -3851,20 +3720,17 @@ NULL
 #' INFOmat <- matrix(INFO,nrow=12,byrow=TRUE)
 #' INFOmat
 #' rownames(INFOmat) <- c("National","Gender: Male","Gender: Female",
-#' "Education: College","Education: High School","Education: Grade School",
-#' "Age: 18-24", "Age: 25-29", "Age: 30-49", "Age: 50-older", "Religion: Protestant", 
-#' "Religion: Catholic")
+#'                        "Education: College","Education: High School","Education: Grade School",
+#'                        "Age: 18-24", "Age: 25-29", "Age: 30-49", "Age: 50-older", "Religion: Protestant",
+#'                        "Religion: Catholic")
 #' colnames(INFOmat) <- c("Criminal", "Not.Criminal", "No.Opinion")
 #' INFOmat
 #' barplot(t(INFOmat[2:3,]),beside=TRUE,legend=TRUE,names=c("Male","Female"),
-#' ylab="Percent of Population Opining")
+#'         ylab="Percent of Population Opining")
 #' barplot((INFOmat[2:3,]),beside=TRUE,legend=TRUE,ylab="Percent of Population Opining" )
 #' remove(INFO,INFOmat)
 #' 
-NULL
-
-
-
+"Gallup"
 
 
 #' Price of regular unleaded gasoline obtained from 25 service stations
@@ -3883,15 +3749,11 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
+#'
+#' Gasoline
 #' str(Gasoline)
-#' attach(Gasoline)
-#' stem(price)
-#' detach(Gasoline)
-#' 
-NULL
-
-
-
+#' stem(Gasoline$price)
+"Gasoline"
 
 
 #' Number of errors in copying a German passage before and after an
@@ -3902,12 +3764,10 @@ NULL
 #' 
 #' @name German
 #' @docType data
-#' @format A data frame with 10 observations on the following 4 variables.
+#' @format A data frame with 10 observations on the following 2 variables.
 #' \describe{ 
 #' \item{Before}{a numeric vector} 
 #' \item{After}{a numeric vector} 
-#' \item{differ}{a numeric vector}
-#' \item{sgnrnks}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -3915,14 +3775,13 @@ NULL
 #' @examples
 #' 
 #' str(German)
-#' attach(German)
-#' qqnorm(differ)
-#' qqline(differ)
-#' shapiro.test(differ)
-#' wilcox.test(Before,After,paired=TRUE)
-#' detach(German)
+#' dif <- (German$Before - German$After)
+#' qqnorm(dif)
+#' qqline(dif)
+#' shapiro.test(dif)
+#' wilcox.test(German$Before,German$After,paired=TRUE)
 #' 
-NULL
+"German"
 
 
 
@@ -3945,15 +3804,10 @@ NULL
 #' @examples
 #' 
 #' str(Golf)
-#' attach(Golf)
-#' stem(yards)
-#' EDA(yards)
-#' detach(Golf)
+#' stem(Golf$yards)
+#' EDA(Golf$yards)
 #' 
-NULL
-
-
-
+"Golf"
 
 
 #' Annual salaries for state governors in 1994
@@ -3987,14 +3841,9 @@ NULL
 #' @examples
 #' 
 #' str(Governor)
-#' attach(Governor)
-#' EDA(X1999salary)
-#' detach(Governor)
+#' EDA(Governor$X1999salary)
 #' 
-NULL
-
-
-
+"Governor"
 
 
 #' High school GPA versus college GPA
@@ -4015,19 +3864,16 @@ NULL
 #' @examples
 #' 
 #' str(Gpa)
-#' attach(Gpa)
-#' plot(HSGPA,CollGPA)
-#' model <- lm(CollGPA~HSGPA)
+#' plot(Gpa$HSGPA,Gpa$CollGPA)
+#' model <- lm(Gpa$CollGPA~Gpa$HSGPA)
 #' abline(model)
 #' model
 #' r <- resid(model)
 #' yhat <- fitted(model)
-#' Table2.1 <- cbind(HSGPA,CollGPA,yhat,r)
+#' Table2.1 <- cbind(Gpa$HSGPA,Gpa$CollGPA,yhat,r)
 #' Table2.1
-#' remove(r,yhat,model,Table2.1)
-#' detach(Gpa)
 #' 
-NULL
+"Gpa"
 
 
 
@@ -4050,14 +3896,9 @@ NULL
 #' @examples
 #' 
 #' str(Grades)
-#' attach(Grades)
-#' EDA(grades)
-#' detach(Grades)
+#' EDA(Grades$grades)
 #' 
-NULL
-
-
-
+"Grades"
 
 
 #' Graduation rates for student athletes in the Southeastern Conf.
@@ -4083,15 +3924,10 @@ NULL
 #' @examples
 #' 
 #' str(Graduate)
-#' attach(Graduate)
-#' names(Percent) <- School
-#' barplot(Percent,las=2,cex.names=.65,col="tomato")
-#' detach(Graduate)
+#' names(Graduate$Percent) <- Graduate$School
+#' barplot(Graduate$Percent,las=2,cex.names=.65,col="tomato")
 #' 
-NULL
-
-
-
+"Graduate"
 
 
 #' Varve thickness from a sequence through an Eocene lake deposit in the Rocky
@@ -4112,15 +3948,10 @@ NULL
 #' @examples
 #' 
 #' str(Greenriv)
-#' attach(Greenriv)
-#' EDA(thick)
-#' SIGN.test(thick,md=7.3,alternative="greater")
-#' detach(Greenriv)
+#' EDA(Greenriv$thick)
+#' SIGN.test(Greenriv$thick,md=7.3,alternative="greater")
 #' 
-NULL
-
-
-
+"Greenriv"
 
 
 #' Thickness of a varved section of the Green river oil shale deposit near a
@@ -4141,16 +3972,11 @@ NULL
 #' @examples
 #' 
 #' str(Grnriv2)
-#' attach(Grnriv2)
-#' EDA(thick)
-#' t.test(thick,mu=8,alternative="less")
-#' SIGN.test(thick,md=8,alternative="less")
-#' detach(Grnriv2)
+#' EDA(Grnriv2$thick)
+#' t.test(Grnriv2$thick,mu=8,alternative="less")
+#' SIGN.test(Grnriv2$thick,md=8,alternative="less")
 #' 
-NULL
-
-
-
+"Grnriv2"
 
 
 #' Group data to illustrate analysis of variance
@@ -4160,11 +3986,11 @@ NULL
 #' 
 #' @name Groupabc
 #' @docType data
-#' @format A data frame with 15 observations on the following 3 variables.
+#' @format A data frame with 45 observations on the following 2 variables.
 #' \describe{ 
-#' \item{GroupA}{a numeric vector} 
-#' \item{GroupB}{a numeric vector} 
-#' \item{GroupC}{a numeric vector} 
+#' \item{Group}{a factor with levels \code{GroupA} \code{GroupB} \code{GroupC}
+#' }
+#' \item{Value}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -4172,15 +3998,10 @@ NULL
 #' @examples
 #' 
 #' str(Groupabc)
-#' attach(Groupabc)
-#' STACKED <-stack(Groupabc)
-#' STACKED[1:5,]
-#' boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
-#' anova(lm(values~ind,data=STACKED))
-#' remove(STACKED)
-#' detach(Groupabc)
+#' boxplot(Value~Group,col=c("red","blue","green"),data=Groupabc)
+#' anova(lm(Value~Group,data=Groupabc))
 #' 
-NULL
+"Groupabc"
 
 
 
@@ -4195,9 +4016,9 @@ NULL
 #' @docType data
 #' @format A data frame with 26 observations on the following 3 variables.
 #' \describe{ 
-#' \item{GroupA}{a numeric vector} 
-#' \item{GroupB}{a numeric vector} 
-#' \item{GroupC}{a numeric vector} 
+#' \item{Group}{a factor with levels \code{GroupA} \code{GroupB} \code{GroupC}
+#' }
+#' \item{Value}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -4205,15 +4026,10 @@ NULL
 #' @examples
 #' 
 #' str(Groups)
-#' attach(Groups)
-#' STACKED <-stack(Groups)
-#' STACKED[1:5,]
-#' boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
-#' anova(lm(values~ind,data=STACKED))
-#' remove(STACKED)
-#' detach(Groups)
+#' boxplot(Score~Group,col=c("red","blue","green"),data=Groups)
+#' anova(lm(Score~Group,data=Groups)) 
 #' 
-NULL
+"Groups"
 
 
 
@@ -4226,11 +4042,10 @@ NULL
 #' 
 #' @name Gym
 #' @docType data
-#' @format A data frame with 8 observations on the following 3 variables.
+#' @format A data frame with 8 observations on the following 2 variables.
 #' \describe{
 #' \item{age}{a numeric vector} 
 #' \item{number}{a numeric vector} 
-#' \item{x.}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -4238,14 +4053,12 @@ NULL
 #' @examples
 #' 
 #' str(Gym)
-#' attach(Gym)
-#' plot(age,number)
-#' model <- lm(number~age)
+#' plot(Gym$age,Gym$number)
+#' model <- lm(Gym$number~Gym$age)
 #' abline(model)
-#' cor(age,number)
-#' detach(Gym)
+#' cor(Gym$age,Gym$number)
 #' 
-NULL
+"Gym"
 
 
 
@@ -4258,12 +4071,10 @@ NULL
 #' 
 #' @name Habits
 #' @docType data
-#' @format A data frame with 11 observations on the following 4 variables.
+#' @format A data frame with 11 observations on the following 2 variables.
 #' \describe{ 
 #' \item{A}{a numeric vector} 
 #' \item{B}{a numeric vector} 
-#' \item{differ}{a numeric vector} 
-#' \item{signrks}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -4271,15 +4082,14 @@ NULL
 #' @examples
 #' 
 #' str(Habits)
-#' attach(Habits)
-#' qqnorm(differ)
-#' qqline(differ)
-#' shapiro.test(differ)
-#' t.test(B,A,paired=TRUE,alternative="less")
-#' wilcox.test(B,A,paired=TRUE,alternative="less")
-#' detach(Habits)
+#' difference <- (Habits$B - Habits$A)
+#' qqnorm(difference)
+#' qqline(difference)
+#' shapiro.test(difference)
+#' t.test(Habits$B,Habits$A,paired=TRUE,alternative="less")
+#' wilcox.test(Habits$B,Habits$A,paired=TRUE,alternative="less")
 #' 
-NULL
+"Habits"
 
 
 
@@ -4290,7 +4100,7 @@ NULL
 #' Data for Example 6.9
 #' 
 #' 
-#' @name Haptologo
+#' @name Haptoglo
 #' @docType data
 #' @format A data frame with 8 observations on the following variable.
 #' \describe{ 
@@ -4301,15 +4111,13 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' str(Haptologo)
-#' attach(Haptologo)
-#' qqnorm(concent,col="blue")
-#' qqline(concent,col="red")
-#' shapiro.test(concent)
-#' t.test(concent,mu=2,alternative="less")
-#' detach(Haptologo)
+#' str(Haptoglo)
+#' qqnorm(Haptoglo$concent,col="blue")
+#' qqline(Haptoglo$concent,col="red")
+#' shapiro.test(Haptoglo$concent)
+#' t.test(Haptoglo$concent,mu=2,alternative="less")
 #' 
-NULL
+"Haptoglo"
 
 
 
@@ -4333,7 +4141,7 @@ NULL
 #' 
 #' data(Hardware)
 #' 
-NULL
+"Hardware"
 
 
 
@@ -4347,22 +4155,10 @@ NULL
 #' 
 #' @name Hardwood
 #' @docType data
-#' @format A data frame with 19 observations on the following variable.
+#' @format A data frame with 19 observations on 2 variables.
 #' \describe{ 
-#' \item{tensile.hardwood}{a factor with levels
-#' \code{1.110000000e+001 1.500000000e+000} \code{2.000000000e+001
-#' 2.000000000e+000} \code{2.190000000e+001 1.500000000e+001}
-#' \code{2.400000000e+001 3.000000000e+000} \code{2.610000000e+001
-#' 4.000000000e+000} \code{2.780000000e+001 1.400000000e+001}
-#' \code{3.000000000e+001 4.500000000e+000} \code{3.380000000e+001
-#' 5.000000000e+000} \code{3.400000000e+001 5.500000000e+000}
-#' \code{3.810000000e+001 6.000000000e+000} \code{3.990000000e+001
-#' 6.500000000e+000} \code{4.200000000e+001 7.000000000e+000}
-#' \code{4.280000000e+001 1.300000000e+001} \code{4.610000000e+001
-#' 8.000000000e+000} \code{4.800000000e+001 1.200000000e+001}
-#' \code{5.200000000e+001 1.000000000e+001} \code{5.250000000e+001
-#' 1.100000000e+001} \code{5.310000000e+001 9.000000000e+000}
-#' \code{6.300000000e+000 1.000000000e+000}} 
+#' \item{tensile}{a numeric vector}
+#' \item{hardwood}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -4370,11 +4166,10 @@ NULL
 #' @examples
 #' 
 #' str(Hardwood)
-#' attach(Hardwood)
 #' 
 #' 
 #' 
-NULL
+"Hardwood"
 
 
 
@@ -4387,13 +4182,11 @@ NULL
 #' 
 #' @name Heating
 #' @docType data
-#' @format A data frame with 30 observations on the following 6 variables.
-#' \describe{ 
-#' \item{TypeA}{a numeric vector} 
-#' \item{TypeB}{a numeric vector} 
-#' \item{TypeC}{a numeric vector}
+#' @format A data frame with 30 observations on the following 3 variables.
+#' \describe{
+#' \item{Type}{a factor with levels \code{TypeA} \code{TypeB} \code{TypeC}
+#' } 
 #' \item{Rating}{a numeric vector} 
-#' \item{Type}{a numeric vector} 
 #' \item{Ranks}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
@@ -4402,12 +4195,10 @@ NULL
 #' @examples
 #' 
 #' str(Heating)
-#' attach(Heating)
-#' boxplot(Rating~Type)
-#' kruskal.test(Rating~as.factor(Type))
-#' detach(Heating)
+#' boxplot(Heating$Rating~Heating$Type)
+#' kruskal.test(Heating$Rating~as.factor(Heating$Type))
 #' 
-NULL
+"Heating"
 
 
 
@@ -4435,19 +4226,12 @@ NULL
 #' @keywords datasets
 #' @examples
 #' 
-#' str(Heat)
-#' attach(Heat)
-#' MAT <- cbind(Reserv, All.US, Not.Rese) 
-#' row.names(MAT) <- c("Utility Gas","LP bottled Gas","Electricity",
-#' "Fuel Oil","Wood","Other Fuel")
-#' MAT
-#' barplot(t(MAT),beside=TRUE,legend=TRUE,main="Heating of American Indian Homes")
-#' sum(Reserv)
-#' sum(All.US)
-#' sum(Not.Rese)
-#' detach(Heat)
+#' #barplot(t(Heat),beside=TRUE,legend=TRUE,main="Heating of American Indian Homes")
+#' sum(Heat$Reserv)
+#' sum(Heat$All.US)
+#' sum(Heat$Not.Rese)
 #' 
-NULL
+"Heat"
 
 
 
@@ -4474,15 +4258,12 @@ NULL
 #' @examples
 #' 
 #' str(Hodgkin)
-#' attach(Hodgkin)
 #' HOD <- as.matrix(Hodgkin[,2:4])
-#' rownames(HOD) <- Histological
+#' rownames(HOD) <- Hodgkin$Histological
 #' HOD
 #' barplot(t(HOD),legend=TRUE,beside=TRUE)
-#' detach(Hodgkin)
-#' remove(HOD)
 #' 
-NULL
+"Hodgkin"
 
 
 
@@ -4530,13 +4311,11 @@ NULL
 #' @examples
 #' 
 #' str(Homes)
-#' attach(Homes)
-#' EDA(X2000)
-#' boxplot(X1994,X2000,names=c("1994","2000"),col=c("red","blue"),ylab="Cost")
-#' boxplot(X2000~Region)
-#' detach(Homes)
+#' EDA(Homes$X2000)
+#' boxplot(Homes$X1994,Homes$X2000,names=c("1994","2000"),col=c("red","blue"),ylab="Cost")
+#' boxplot(Homes$X2000~Homes$Region)
 #' 
-NULL
+"Homes"
 
 
 
@@ -4561,12 +4340,10 @@ NULL
 #' @examples
 #' 
 #' str(Homework)
-#' attach(Homework)
-#' boxplot(Private,Public)
-#' t.test(Private,Public,conf.level=.98)
-#' detach(Homework)
+#' boxplot(Homework$Private,Homework$Public)
+#' t.test(Homework$Private,Homework$Public,conf.level=.98)
 #' 
-NULL
+"Homework"
 
 
 
@@ -4589,11 +4366,9 @@ NULL
 #' @examples
 #' 
 #' str(Honda)
-#' attach(Honda)
-#' t.test(mileage,mu=40,alternative="less")
-#' detach(Honda)
+#' t.test(Honda$mileage,mu=40,alternative="less")
 #' 
-NULL
+"Honda"
 
 
 
@@ -4607,13 +4382,11 @@ NULL
 #' 
 #' @name Hostile
 #' @docType data
-#' @format A data frame with 45 observations on the following 6 variables.
+#' @format A data frame with 45 observations on the following 3 variables.
 #' \describe{ 
-#' \item{Rural}{a numeric vector} 
-#' \item{Suburban}{a numeric vector} 
-#' \item{Urban}{a numeric vector} 
+#' \item{Type}{a factor with levels \code{Suburban} \code{Urban} 
+#' } 
 #' \item{HLT}{a numeric vector} 
-#' \item{Type}{a numeric vector} 
 #' \item{Ranks}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
@@ -4622,12 +4395,10 @@ NULL
 #' @examples
 #' 
 #' str(Hostile)
-#' attach(Hostile)
-#' boxplot(HLT~Type)
-#' kruskal.test(HLT~as.factor(Type))
-#' detach(Hostile)
+#' boxplot(Hostile$HLT~Hostile$Type)
+#' kruskal.test(Hostile$HLT~as.factor(Hostile$Type))
 #' 
-NULL
+"Hostile"
 
 
 
@@ -4661,35 +4432,32 @@ NULL
 #' @examples
 #' 
 #' str(Housing)
-#' attach(Housing)
-#' stem(X1993)
-#' stem(X1984)
+#' stem(Housing$X1993)
+#' stem(Housing$X1984)
 #' par(mfrow=c(2,2))
-#' stripchart(x=list(X1984,X1993),method="stack",pch=1,cex=1.2,
-#' col=c("orange","pink"),group.names=c("1984","1993"))
+#' stripchart(x=list(Housing$X1984,Housing$X1993),method="stack",pch=1,cex=1.2,
+#'            col=c("orange","pink"),group.names=c("1984","1993"))
 #' title(main="Problem 5.82 \n We have not talked about this kind of graph before...")
-#' hist(X1993,breaks="Scott",col="pink")
-#' hist(X1984,breaks="Scott",col="orange")
-#' plot(density(X1993),col="red",xlab="",ylab="",main="",ylim=c(0,.00003))
-#' lines(density(X1984),col="orange")
+#' hist(Housing$X1993,breaks="Scott",col="pink")
+#' hist(Housing$X1984,breaks="Scott",col="orange")
+#' plot(density(Housing$X1993),col="red",xlab="",ylab="",main="",ylim=c(0,.00003))
+#' lines(density(Housing$X1984),col="orange")
 #' par(mfrow=c(1,1))
-#' boxplot(X1993,X1984,col=c("pink","orange"),names=c("1993","1984"),main="Problem 5.82")
-#' SIGN.test(X1984,conf.level=.98)
-#' SIGN.test(X1993,conf.level=.98)
-#' # 98% CI -> 63591.1 79622.56 and 85591.69 109915.4
-#' # Placing on a common number line...
+#' boxplot(Housing$X1993,Housing$X1984,col=c("pink","orange"),names=c("1993","1984"),main="Problem 5.82")
+#' SIGN.test(Housing$X1984,conf.level=.98)
+#' SIGN.test(Housing$X1993,conf.level=.98)
+#' #98% CI -> 63591.1 79622.56 and 85591.69 109915.4
+#' #Placing on a common number line...
 #' my.axis <- function(side, at, labels,...)
 #' {for(i in seq(along=at)) axis(side=side, at=at[i], labels=labels[i],...) }
-#' 
 #' plot(1,type="n",xlim=c(63000,110000),ylim=c(0,1),
-#' xlab="Median House Price",ylab="",yaxt="n",main="")
+#'      xlab="Median House Price",ylab="",yaxt="n",main="")
 #' title(main="98 Percent Confidence Intervals")
 #' my.axis(2,at=c(.25,.75),labels=c("1984","1993"), cex.axis=1.2 ,las=2)
 #' lines( c(63591.1, 79622.56),c(.25,.25),col="orange",lwd=24)
 #' lines( c(85591.69, 109915.4),c(.75,.75),col="pink",lwd=24)
-#' detach(Housing)
 #' 
-NULL
+"Housing"
 
 
 
@@ -4717,14 +4485,12 @@ NULL
 #' @examples
 #' 
 #' str(Hurrican)
-#' attach(Hurrican)    
-#' barplot(table(hurrican),col="blue",main="Problem 1.38",
+#' barplot(table(Hurrican$hurrican),col="blue",main="Problem 1.38",
 #' xlab="Number of Hurricanes",ylab="Number of Seasons")
-#' boxplot(storms~ElNino)
-#' anova(lm(storms~ElNino))
-#' detach(Hurrican)
+#' boxplot(Hurrican$storms~Hurrican$ElNino)
+#' anova(lm(Hurrican$storms~Hurrican$ElNino))
 #' 
-NULL
+"Hurrican"
 
 
 
@@ -4752,12 +4518,10 @@ NULL
 #' @examples
 #' 
 #' str(Iceberg)
-#' attach(Iceberg)
-#' plot(GrandBk,Newfound)
-#' abline(lm(Newfound~GrandBk))
-#' detach(Iceberg)
+#' plot(Iceberg$GrandBk,Iceberg$Newfound)
+#' abline(lm(Iceberg$Newfound~Iceberg$GrandBk))
 #' 
-NULL
+"Iceberg"
 
 
 
@@ -4770,7 +4534,7 @@ NULL
 #' 
 #' @name Income
 #' @docType data
-#' @format A data frame with 51 observations on the following 6 variables.
+#' @format A data frame with 51 observations on the following 2 variables.
 #' \describe{ 
 #' \item{State}{a factor with levels \code{Alabama}
 #' \code{Alaska} \code{Arizona} \code{Arkansas} \code{California}
@@ -4786,10 +4550,6 @@ NULL
 #' \code{Tennessee} \code{Texas} \code{Utah} \code{Vermont} \code{Virginia}
 #' \code{Washington} \code{West Virginia} \code{Wisconsin} \code{Wyoming}}
 #' \item{income}{a numeric vector} 
-#' \item{C3}{a numeric vector}
-#' \item{Class}{a numeric vector} 
-#' \item{freq}{a numeric vector}
-#' \item{percent}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -4797,15 +4557,12 @@ NULL
 #' @examples
 #' 
 #' str(Income)
-#' attach(Income)
-#' CATS <-factor(cut(income,breaks=c(0.5,1.0,1.5,2,max(income)) ))    
+#' CATS <-factor(cut(Income$income,breaks=c(0.5,1.0,1.5,2,max(Income$income)) ))
 #' table(CATS)
-#' table(CATS)/length(income)
+#' table(CATS)/length(Income$income)
 #' barplot(table(CATS),col="lightblue",main="Problem 1.33")
-#' detach(Income)
-#' remove(CATS)      
 #' 
-NULL
+"Income"
 
 
 
@@ -4830,12 +4587,10 @@ NULL
 #' @examples
 #' 
 #' str(Independent)
-#' attach(Independent)
-#' boxplot(score~group)
-#' wilcox.test(score~group)
-#' detach(Independent)
+#' boxplot(Independent$score~Independent$group)
+#' wilcox.test(Independent$score~Independent$group)
 #' 
-NULL
+"Independent"
 
 
 
@@ -4864,15 +4619,13 @@ NULL
 #' @examples
 #' 
 #' str(Indian)
-#' attach(Indian)
 #' par(mfrow=c(1,2))
-#' plot(highsch,income,xlab="Percent High School Graduates", ylab="Per capita income")
-#' plot(highsch,poverty,xlab="Percent High School Graduates", ylab="Poverty rate")
+#' plot(Indian$highsch,Indian$income,xlab="Percent High School Graduates", ylab="Per capita income")
+#' plot(Indian$highsch,Indian$poverty,xlab="Percent High School Graduates", ylab="Poverty rate")
 #' par(mfrow=c(1,1))
-#' cor(cbind(highsch,income,poverty))
-#' detach(Indian)
+#' cor(cbind(Indian$highsch,Indian$income,Indian$poverty))
 #' 
-NULL
+"Indian"
 
 
 
@@ -4897,12 +4650,9 @@ NULL
 #' @examples
 #' 
 #' str(Indiapol)
-#' attach(Indiapol)
-#' plot(year,speed,type="l")
-#' detach(Indiapol)
+#' plot(Indiapol$year,Indiapol$speed,type="l")
 #' 
-NULL
-
+"Indiapol"
 
 
 
@@ -4935,13 +4685,11 @@ NULL
 #' @examples
 #' 
 #' str(Indy500)
-#' attach(Indy500)
-#' stripchart(qualif~group, method="stack",pch=19,col=c("red","blue"))
-#' boxplot(qualif~group)
-#' t.test(qualif~group)
-#' detach(Indy500)
+#' stripchart(Indy500$qualif~Indy500$group, method="stack",pch=19,col=c("red","blue"))
+#' boxplot(Indy500$qualif~Indy500$group)
+#' t.test(Indy500$qualif~Indy500$group)
 #' 
-NULL
+"Indy500"
 
 
 
@@ -4968,12 +4716,10 @@ NULL
 #' @examples
 #' 
 #' str(Inflatio)
-#' attach(Inflatio)
-#' plot(inflation,increase)
-#' cor(inflation,increase,use="complete.obs")
-#' detach(Inflatio)
+#' plot(Inflatio$inflation,Inflatio$increase)
+#' cor(Inflatio$inflation,Inflatio$increase,use="complete.obs")
 #' 
-NULL
+"Inflatio"
 
 
 
@@ -4996,12 +4742,10 @@ NULL
 #' @examples
 #' 
 #' str(Inletoil)
-#' attach(Inletoil)
-#' t.test(temp)$conf
-#' t.test(temp,mu=98,alternative="less")
-#' detach(Inletoil)
+#' t.test(Inletoil$temp)$conf
+#' t.test(Inletoil$temp,mu=98,alternative="less")
 #' 
-NULL
+"Inletoil"
 
 
 
@@ -5029,12 +4773,10 @@ NULL
 #' @examples
 #' 
 #' str(Inmate)
-#' attach(Inmate)
 #' Inmate
 #' chisq.test(Inmate[,2:5])
-#' detach(Inmate)
 #' 
-NULL
+"Inmate"
 
 
 
@@ -5062,12 +4804,10 @@ NULL
 #' @examples
 #' 
 #' str(Inspect)
-#' attach(Inspect)
 #' Inspect
 #' chisq.test(Inspect[,2:4])
-#' detach(Inspect)
 #' 
-NULL
+"Inspect"
 
 
 
@@ -5091,11 +4831,9 @@ NULL
 #' @examples
 #' 
 #' str(Insulate)
-#' attach(Insulate)
-#' summary(lm(loss~temp))
-#' detach(Insulate)
+#' summary(lm(Insulate$loss~Insulate$temp))
 #' 
-NULL
+"Insulate"
 
 
 
@@ -5119,15 +4857,12 @@ NULL
 #' @examples
 #' 
 #' str(Iqgpa)
-#' attach(Iqgpa)
-#' plot(IQ,GPA)
-#' model <- lm(GPA~IQ)
+#' plot(Iqgpa$IQ,Iqgpa$GPA)
+#' model <- lm(Iqgpa$GPA~Iqgpa$IQ) 
 #' abline(model)
 #' summary(model)
-#' detach(Iqgpa)
-#' remove(model)
 #' 
-NULL
+"Iqgpa"
 
 
 
@@ -5163,12 +4898,10 @@ NULL
 #' @examples
 #' 
 #' str(Irises)
-#' attach(Irises)
-#' EDA(sepalL1)
-#' t.test(sepalL1,conf.level=.99)$conf
-#' detach(Irises)
+#' EDA(Irises$sepalL1)
+#' t.test(Irises$sepalL1,conf.level=.99)$conf
 #' 
-NULL
+"Irises"
 
 
 
@@ -5199,15 +4932,13 @@ NULL
 #' @examples
 #' 
 #' str(Jdpower)
-#' attach(Jdpower)
-#' plot(X1994,X1995)
-#' model <- lm(X1995~X1994)
+#' plot(Jdpower$X1994,Jdpower$X1995)
+#' model <- lm(Jdpower$X1995~Jdpower$X1994)
 #' abline(model)
 #' model
-#' cor(X1995,X1994)
-#' detach(Jdpower)
+#' cor(Jdpower$X1995,Jdpower$X1994)
 #' 
-NULL
+"Jdpower"
 
 
 
@@ -5231,15 +4962,12 @@ NULL
 #' @examples
 #' 
 #' str(Jobsat)
-#' attach(Jobsat)
-#' plot(WSPT,satisfac)
-#' model <- lm(satisfac~WSPT)
+#' plot(Jobsat$WSPT,Jobsat$satisfac)
+#' model <- lm(Jobsat$satisfac~Jobsat$WSPT)
 #' abline(model)
 #' summary(model)
-#' detach(Jobsat)
-#' remove(model)
 #' 
-NULL
+"Jobsat"
 
 
 
@@ -5263,13 +4991,11 @@ NULL
 #' @examples
 #' 
 #' str(Kidsmoke)
-#' attach(Kidsmoke)
-#' table(gender,smoke)
-#' addmargins(table(gender,smoke))
-#' addmargins(table(gender,smoke)/1000)
-#' detach(Kidsmoke)
+#' table(Kidsmoke$gender,Kidsmoke$smoke)
+#' addmargins(table(Kidsmoke$gender,Kidsmoke$smoke))
+#' addmargins(table(Kidsmoke$gender,Kidsmoke$smoke)/1000)
 #' 
-NULL
+"Kidsmoke"
 
 
 
@@ -5305,11 +5031,9 @@ NULL
 #' @examples
 #' 
 #' str(Kilowatt)
-#' attach(Kilowatt)
-#' EDA(rate)
-#' detach(Kilowatt)
+#' EDA(Kilowatt$rate)
 #' 
-NULL
+"Kilowatt"
 
 
 
@@ -5335,16 +5059,13 @@ NULL
 #' @examples
 #' 
 #' str(Kinder)
-#' attach(Kinder)
-#' DIF <- Kinder - NoKinder
+#' DIF <- Kinder$Kinder - Kinder$NoKinder
 #' qqnorm(DIF)
 #' qqline(DIF)
 #' shapiro.test(DIF)
-#' t.test(Kinder, NoKinder,paired=TRUE,alternative="greater")
-#' detach(Kinder)
-#' remove(DIF)
+#' t.test(Kinder$Kinder, Kinder$NoKinder,paired=TRUE,alternative="greater")
 #' 
-NULL
+"Kinder"
 
 
 
@@ -5357,13 +5078,11 @@ NULL
 #' 
 #' @name Laminect
 #' @docType data
-#' @format A data frame with 46 observations on the following 5 variables.
+#' @format A data frame with 46 observations on the following 2 variables.
 #' \describe{
 #'  \item{cost}{a numeric vector} 
-#'  \item{class}{a numeric vector} 
-#'  \item{Rural}{a numeric vector}
-#'  \item{Regional}{a numeric vector} 
-#'  \item{Metropol}{a numeric vector} 
+#'  \item{class}{a factor with levels \code{Rural} \code{Regional} \code{Metropol}
+#'  } 
 #'  }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -5371,12 +5090,10 @@ NULL
 #' @examples
 #' 
 #' str(Laminect)
-#' attach(Laminect)
-#' boxplot(cost~class)
-#' anova(lm(cost~as.factor(class)))
-#' detach(Laminect)
+#' boxplot(Laminect$cost~Laminect$class)
+#' anova(lm(Laminect$cost~as.factor(Laminect$class)))
 #' 
-NULL
+"Laminect"
 
 
 
@@ -5400,12 +5117,10 @@ NULL
 #' @examples
 #' 
 #' str(Leader)
-#' attach(Leader)
-#' boxplot(under35,over35,names=c("Under 35","Over 35"),col=c("green","brown"))
-#' t.test(under35,over35)
-#' detach(Leader)
+#' boxplot(Leader$under35,Leader$over35,names=c("Under 35","Over 35"),col=c("green","brown"))
+#' t.test(Leader$under35,Leader$over35)
 #' 
-NULL
+"Leader"
 
 
 
@@ -5430,11 +5145,9 @@ NULL
 #' @examples
 #' 
 #' str(Lead)
-#' attach(Lead)
-#' boxplot(exposed,control, names=c("Exposed","Control"),col=c("red","blue"))
-#' detach(Lead)
+#' boxplot(Lead$exposed,Lead$control, names=c("Exposed","Control"),col=c("red","blue"))
 #' 
-NULL
+"Lead"
 
 
 
@@ -5457,11 +5170,9 @@ NULL
 #' @examples
 #' 
 #' str(Lethal)
-#' attach(Lethal)
-#' SIGN.test(survival,md=45,alternative="less")
-#' detach(Lethal)
+#' SIGN.test(Lethal$survival,md=45,alternative="less")
 #' 
-NULL
+"Lethal"
 
 
 
@@ -5486,15 +5197,13 @@ NULL
 #' @examples
 #' 
 #' str(Life)
-#' attach(Life)
-#' plot(year,Men,type="l",ylim=c(min(Men,Women),max(Men,Women)),col="blue",
+#' plot(Life$year,Life$Men,type="l",ylim=c(min(Life$Men,Life$Women),max(Life$Men,Life$Women)),col="blue",
 #' main="Life Expectancy versus Year",ylab="Age",xlab="Year")
-#' lines(year,Women,col="red")
+#' lines(Life$year,Life$Women,col="red")
 #' text(1955,65,"Men",col="blue")
 #' text(1955,70,"Women",col="red")
-#' detach(Life)
 #' 
-NULL
+"Life"
 
 
 
@@ -5507,12 +5216,10 @@ NULL
 #' 
 #' @name Lifespan
 #' @docType data
-#' @format A data frame with 6 observations on the following 4 variables.
+#' @format A data frame with 6 observations on the following 2 variables.
 #' \describe{ 
 #' \item{heat}{a numeric vector} 
 #' \item{life}{a numeric vector} 
-#' \item{RESI1}{a numeric vector}
-#' \item{FITS1}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
 #' Duxbury
@@ -5520,17 +5227,15 @@ NULL
 #' @examples
 #' 
 #' str(Lifespan)
-#' attach(Lifespan)
-#' plot(heat,life)
-#' model <- lm(life~heat)
+#' plot(Lifespan$heat,Lifespan$life)
+#' model <- lm(Lifespan$life~Lifespan$heat)
 #' model
 #' resid(model)
 #' sum((resid(model))^2)
 #' anova(model)
 #' # plot(model)  # Used for diagnostic purposes
-#' detach(Lifespan)
 #' 
-NULL
+"Lifespan"
 
 
 
@@ -5559,11 +5264,9 @@ NULL
 #' @examples
 #' 
 #' str(Ligntmonth)
-#' attach(Ligntmonth)
-#' plot(damage,deaths)
-#' detach(Ligntmonth)
+#' plot(Ligntmonth$damage,Ligntmonth$deaths)
 #' 
-NULL
+"Ligntmonth"
 
 
 
@@ -5576,13 +5279,11 @@ NULL
 #' 
 #' @name Lodge
 #' @docType data
-#' @format A data frame with 45 observations on the following 6 variables.
+#' @format A data frame with 45 observations on the following 3 variables.
 #' \describe{ 
-#' \item{SiteA}{a numeric vector} 
-#' \item{SiteB}{a numeric vector} 
-#' \item{SiteC}{a numeric vector}
+#' \item{Site}{a factor with levels \code{SiteA} \code{SiteB} \code{SiteC}
+#' }
 #' \item{Traffic}{a numeric vector} 
-#' \item{Site}{a numeric vector} 
 #' \item{Ranks}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
@@ -5591,12 +5292,10 @@ NULL
 #' @examples
 #' 
 #' str(Lodge)
-#' attach(Lodge)
-#' boxplot(Traffic~Site)
-#' anova(lm(Traffic~as.factor(Site)))
-#' detach(Lodge)
+#' boxplot(Lodge$Traffic~Lodge$Site)
+#' anova(lm(Lodge$Traffic~as.factor(Lodge$Site)))
 #' 
-NULL
+"Lodge"
 
 
 
@@ -5609,13 +5308,11 @@ NULL
 #' 
 #' @name Longtail
 #' @docType data
-#' @format A data frame with 60 observations on the following 6 variables.
+#' @format A data frame with 60 observations on the following 3 variables.
 #' \describe{ 
-#' \item{GroupA}{a numeric vector} 
-#' \item{GroupB}{a numeric vector} 
-#' \item{GroupC}{a numeric vector}
+#' \item{Group}{A factor with levels \code{GroupA} \code{GroupB} \code{GroupC}
+#' }
 #' \item{score}{a numeric vector} 
-#' \item{Group}{a numeric vector} 
 #' \item{Ranks}{a numeric vector} 
 #' }
 #' @references Kitchens, L. J. (2003) \emph{Basic Statistics and Data Analysis}.
@@ -5624,13 +5321,11 @@ NULL
 #' @examples
 #' 
 #' str(Longtail)
-#' attach(Longtail)
-#' boxplot(score~Group)
-#' kruskal.test(score~as.factor(Group))
-#' anova(lm(score~as.factor(Group)))
-#' detach(Longtail)
+#' boxplot(Longtail$Score~Longtail$Group)
+#' kruskal.test(Longtail$Score~as.factor(Longtail$Group))
+#' anova(lm(Longtail$Score~as.factor(Longtail$Group)))
 #' 
-NULL
+"Longtail"
 
 
 
@@ -5643,9 +5338,8 @@ NULL
 #' 
 #' @name Lowabil
 #' @docType data
-#' @format A data frame with 12 observations on the following 3 variables.
+#' @format A data frame with 12 observations on the following 2 variables.
 #' \describe{ 
-#' \item{Pair}{a numeric vector} 
 #' \item{Experimt}{a numeric vector} 
 #' \item{Control}{a numeric vector} 
 #' }
@@ -5655,16 +5349,13 @@ NULL
 #' @examples
 #' 
 #' str(Lowabil)
-#' attach(Lowabil)
-#' DIF <- Experimt - Control
-#' qqnorm(DIF)
+#' DIF <- Lowabil$experiment - Lowabil$control
+#' qqnorm(DIF) #error has no y 
 #' qqline(DIF)
 #' shapiro.test(DIF)
-#' t.test(Experimt,Control,paired=TRUE)
-#' detach(Lowabil)
-#' remove(DIF)
+#' t.test(Lowabil$experiment,Lowabil$control,paired=TRUE)
 #' 
-NULL
+"Lowabil"
 
 
 

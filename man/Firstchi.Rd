@@ -8,15 +8,16 @@
 \describe{ 
 \item{age}{a numeric vector} 
 }}
+\usage{
+Firstchi
+}
 \description{
 Data for Exercise 5.11
 }
 \examples{
 
 str(Firstchi)
-attach(Firstchi)
-EDA(age)
-detach(Firstchi)
+EDA(Firstchi$age)
 
 }
 \references{

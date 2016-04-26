@@ -8,16 +8,17 @@
 \describe{ 
 \item{temp}{a numeric vector} 
 }}
+\usage{
+Inletoil
+}
 \description{
 Data for Exercises 5.91 and 6.48
 }
 \examples{
 
 str(Inletoil)
-attach(Inletoil)
-t.test(temp)$conf
-t.test(temp,mu=98,alternative="less")
-detach(Inletoil)
+t.test(Inletoil$temp)$conf
+t.test(Inletoil$temp,mu=98,alternative="less")
 
 }
 \references{

@@ -9,17 +9,19 @@
 \item{Number}{a numeric vector} 
 \item{Cost}{a numeric vector} 
 }}
+\usage{
+Family
+}
 \description{
 Data for Exercise 2.89
 }
 \examples{
 
 str(Family)
-attach(Family)
-plot(Number,Cost)
-cor(Number,Cost)
-lm(Cost~Number)
-detach(Family)
+str(Family)
+plot(Family$Number,Family$Cost)
+cor(Family$Number,Family$Cost)
+lm(Family$Cost~Family$Number)
 
 }
 \references{

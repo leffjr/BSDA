@@ -5,25 +5,25 @@
 \alias{German}
 \title{Number of errors in copying a German passage before and after an
 experimental course in German}
-\format{A data frame with 10 observations on the following 4 variables.
+\format{A data frame with 10 observations on the following 2 variables.
 \describe{ 
 \item{Before}{a numeric vector} 
 \item{After}{a numeric vector} 
-\item{differ}{a numeric vector}
-\item{sgnrnks}{a numeric vector} 
 }}
+\usage{
+German
+}
 \description{
 Data for Exercise 7.60
 }
 \examples{
 
 str(German)
-attach(German)
-qqnorm(differ)
-qqline(differ)
-shapiro.test(differ)
-wilcox.test(Before,After,paired=TRUE)
-detach(German)
+dif <- (German$Before - German$After)
+qqnorm(dif)
+qqline(dif)
+shapiro.test(dif)
+wilcox.test(German$Before,German$After,paired=TRUE)
 
 }
 \references{

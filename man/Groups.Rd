@@ -6,23 +6,21 @@
 \title{An illustration of analysis of variance}
 \format{A data frame with 26 observations on the following 3 variables.
 \describe{ 
-\item{GroupA}{a numeric vector} 
-\item{GroupB}{a numeric vector} 
-\item{GroupC}{a numeric vector} 
+\item{Group}{a factor with levels \code{GroupA} \code{GroupB} \code{GroupC}
+}
+\item{Value}{a numeric vector} 
 }}
+\usage{
+Groups
+}
 \description{
 Data for Exercise 10.4
 }
 \examples{
 
 str(Groups)
-attach(Groups)
-STACKED <-stack(Groups)
-STACKED[1:5,]
-boxplot(values~ind,col=c("red","blue","green"),data=STACKED)
-anova(lm(values~ind,data=STACKED))
-remove(STACKED)
-detach(Groups)
+boxplot(Score~Group,col=c("red","blue","green"),data=Groups)
+anova(lm(Score~Group,data=Groups)) 
 
 }
 \references{

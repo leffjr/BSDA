@@ -12,16 +12,17 @@
 \item{inflation}{a numeric vector} 
 \item{C6.T}{a factor with levels \code{alow} \code{bmiddle} \code{high}} 
 }}
+\usage{
+Inflatio
+}
 \description{
 Data for Exercises 2.12 and 2.29
 }
 \examples{
 
 str(Inflatio)
-attach(Inflatio)
-plot(inflation,increase)
-cor(inflation,increase,use="complete.obs")
-detach(Inflatio)
+plot(Inflatio$inflation,Inflatio$increase)
+cor(Inflatio$inflation,Inflatio$increase,use="complete.obs")
 
 }
 \references{

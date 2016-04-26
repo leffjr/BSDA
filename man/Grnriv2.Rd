@@ -9,17 +9,18 @@ major lake in the Rocky Mountains}
 \describe{ 
 \item{thick}{a numeric vector} 
 }}
+\usage{
+Grnriv2
+}
 \description{
 Data for Exercises 6.45 and 6.98
 }
 \examples{
 
 str(Grnriv2)
-attach(Grnriv2)
-EDA(thick)
-t.test(thick,mu=8,alternative="less")
-SIGN.test(thick,md=8,alternative="less")
-detach(Grnriv2)
+EDA(Grnriv2$thick)
+t.test(Grnriv2$thick,mu=8,alternative="less")
+SIGN.test(Grnriv2$thick,md=8,alternative="less")
 
 }
 \references{

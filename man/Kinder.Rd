@@ -11,20 +11,20 @@ those who did not}
 \item{Kinder}{a numeric vector} 
 \item{NoKinder}{a numeric vector} 
 }}
+\usage{
+Kinder
+}
 \description{
 Data for Exercise 7.68
 }
 \examples{
 
 str(Kinder)
-attach(Kinder)
-DIF <- Kinder - NoKinder
+DIF <- Kinder$Kinder - Kinder$NoKinder
 qqnorm(DIF)
 qqline(DIF)
 shapiro.test(DIF)
-t.test(Kinder, NoKinder,paired=TRUE,alternative="greater")
-detach(Kinder)
-remove(DIF)
+t.test(Kinder$Kinder, Kinder$NoKinder,paired=TRUE,alternative="greater")
 
 }
 \references{

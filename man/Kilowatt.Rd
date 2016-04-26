@@ -21,15 +21,16 @@ Dakota} \code{Ohio} \code{Oklahoma} \code{Oregon} \code{Pennsylvania}
 \code{Washington} \code{West Virginia} \code{Wisconsin} \code{Wyoming}}
 \item{rate}{a numeric vector} 
 }}
+\usage{
+Kilowatt
+}
 \description{
 Data for Example 5.9
 }
 \examples{
 
 str(Kilowatt)
-attach(Kilowatt)
-EDA(rate)
-detach(Kilowatt)
+EDA(Kilowatt$rate)
 
 }
 \references{

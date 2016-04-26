@@ -8,15 +8,16 @@
 \describe{ 
 \item{food}{a numeric vector} 
 }}
+\usage{
+Food
+}
 \description{
 Data for Exercise 5.106
 }
 \examples{
 
 str(Food)
-attach(Food)
-EDA(food)
-detach(Food)
+EDA(Food$food)
 
 }
 \references{

@@ -4,26 +4,26 @@
 \name{Habits}
 \alias{Habits}
 \title{Study habits of students in two matched school districts}
-\format{A data frame with 11 observations on the following 4 variables.
+\format{A data frame with 11 observations on the following 2 variables.
 \describe{ 
 \item{A}{a numeric vector} 
 \item{B}{a numeric vector} 
-\item{differ}{a numeric vector} 
-\item{signrks}{a numeric vector} 
 }}
+\usage{
+Habits
+}
 \description{
 Data for Exercise 7.57
 }
 \examples{
 
 str(Habits)
-attach(Habits)
-qqnorm(differ)
-qqline(differ)
-shapiro.test(differ)
-t.test(B,A,paired=TRUE,alternative="less")
-wilcox.test(B,A,paired=TRUE,alternative="less")
-detach(Habits)
+difference <- (Habits$B - Habits$A)
+qqnorm(difference)
+qqline(difference)
+shapiro.test(difference)
+t.test(Habits$B,Habits$A,paired=TRUE,alternative="less")
+wilcox.test(Habits$B,Habits$A,paired=TRUE,alternative="less")
 
 }
 \references{

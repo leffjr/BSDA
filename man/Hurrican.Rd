@@ -13,18 +13,19 @@
 \code{warm}} 
 \item{code}{a numeric vector} 
 }}
+\usage{
+Hurrican
+}
 \description{
 Data for Exercises 1.38, 10.19, and Example 1.6
 }
 \examples{
 
 str(Hurrican)
-attach(Hurrican)    
-barplot(table(hurrican),col="blue",main="Problem 1.38",
+barplot(table(Hurrican$hurrican),col="blue",main="Problem 1.38",
 xlab="Number of Hurricanes",ylab="Number of Seasons")
-boxplot(storms~ElNino)
-anova(lm(storms~ElNino))
-detach(Hurrican)
+boxplot(Hurrican$storms~Hurrican$ElNino)
+anova(lm(Hurrican$storms~Hurrican$ElNino))
 
 }
 \references{

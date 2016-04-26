@@ -9,19 +9,19 @@
 \item{IQ}{a numeric vector} 
 \item{GPA}{a numeric vector} 
 }}
+\usage{
+Iqgpa
+}
 \description{
 Data for Exercises 9.51 and 9.52
 }
 \examples{
 
 str(Iqgpa)
-attach(Iqgpa)
-plot(IQ,GPA)
-model <- lm(GPA~IQ)
+plot(Iqgpa$IQ,Iqgpa$GPA)
+model <- lm(Iqgpa$GPA~Iqgpa$IQ) 
 abline(model)
 summary(model)
-detach(Iqgpa)
-remove(model)
 
 }
 \references{

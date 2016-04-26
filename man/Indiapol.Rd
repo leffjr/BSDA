@@ -10,15 +10,16 @@
 \item{speed}{a numeric vector} 
 \item{yr.1960}{a numeric vector} 
 }}
+\usage{
+Indiapol
+}
 \description{
 Data for Exercise 1.128
 }
 \examples{
 
 str(Indiapol)
-attach(Indiapol)
-plot(year,speed,type="l")
-detach(Indiapol)
+plot(Indiapol$year,Indiapol$speed,type="l")
 
 }
 \references{

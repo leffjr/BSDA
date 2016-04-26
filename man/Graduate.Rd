@@ -14,16 +14,17 @@ Carolina} \code{Tennessee} \code{Vanderbilt}}
 \code{LSt} \code{Mi} \code{MSt} \code{SC} \code{Te} \code{Va}}
 \item{Percent}{a numeric vector} 
 }}
+\usage{
+Graduate
+}
 \description{
 Data for Exercise 1.118
 }
 \examples{
 
 str(Graduate)
-attach(Graduate)
-names(Percent) <- School
-barplot(Percent,las=2,cex.names=.65,col="tomato")
-detach(Graduate)
+names(Graduate$Percent) <- Graduate$School
+barplot(Graduate$Percent,las=2,cex.names=.65,col="tomato")
 
 }
 \references{

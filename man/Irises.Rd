@@ -21,16 +21,17 @@
 \item{sepalL}{a numeric vector}
 \item{sample}{a numeric vector} 
 }}
+\usage{
+Irises
+}
 \description{
 Data for Exercises 1.15 and 5.19
 }
 \examples{
 
 str(Irises)
-attach(Irises)
-EDA(sepalL1)
-t.test(sepalL1,conf.level=.99)$conf
-detach(Irises)
+EDA(Irises$sepalL1)
+t.test(Irises$sepalL1,conf.level=.99)$conf
 
 }
 \references{

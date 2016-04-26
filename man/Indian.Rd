@@ -14,19 +14,20 @@ American indians living on reservations}
 \item{income}{a numeric vector} 
 \item{poverty}{a numeric vector} 
 }}
+\usage{
+Indian
+}
 \description{
 Data for Exercise 2.95
 }
 \examples{
 
 str(Indian)
-attach(Indian)
 par(mfrow=c(1,2))
-plot(highsch,income,xlab="Percent High School Graduates", ylab="Per capita income")
-plot(highsch,poverty,xlab="Percent High School Graduates", ylab="Poverty rate")
+plot(Indian$highsch,Indian$income,xlab="Percent High School Graduates", ylab="Per capita income")
+plot(Indian$highsch,Indian$poverty,xlab="Percent High School Graduates", ylab="Poverty rate")
 par(mfrow=c(1,1))
-cor(cbind(highsch,income,poverty))
-detach(Indian)
+cor(cbind(Indian$highsch,Indian$income,Indian$poverty))
 
 }
 \references{

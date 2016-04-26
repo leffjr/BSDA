@@ -8,15 +8,16 @@
 \describe{ 
 \item{grades}{a numeric vector} 
 }}
+\usage{
+Grades
+}
 \description{
 Data for Exercise 1.120
 }
 \examples{
 
 str(Grades)
-attach(Grades)
-EDA(grades)
-detach(Grades)
+EDA(Grades$grades)
 
 }
 \references{

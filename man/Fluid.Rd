@@ -18,16 +18,17 @@ stress}
 \item{group}{a numeric vector} 
 \item{ln.resp.}{a numeric vector} 
 }}
+\usage{
+Fluid
+}
 \description{
 Data for Exercise 5.76
 }
 \examples{
 
 str(Fluid)
-attach(Fluid)
-stem(X34kV)
-SIGN.test(X34kV)
-detach(Fluid)
+stem(Fluid$X34kV)
+SIGN.test(Fluid$X34kV)
 
 }
 \references{

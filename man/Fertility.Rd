@@ -21,19 +21,20 @@ Dakota} \code{Ohio} \code{Oklahoma} \code{Oregon} \code{Pennsylvania}
 \code{Washington} \code{West Virginia} \code{Wisconsin} \code{Wyoming}}
 \item{rate}{a numeric vector}
 }}
+\usage{
+Fertility
+}
 \description{
 Data for Exercise 1.125
 }
 \examples{
 
 str(Fertility)
-attach(Fertility)
 library(lattice)
-dotplot(State~rate)
-stem(rate)
-fivenum(rate)
-EDA(rate)
-detach(Fertility)
+dotplot(Fertility$State~Fertility$rate)
+stem(Fertility$rate)
+fivenum(Fertility$rate)
+EDA(Fertility$rate)
 
 }
 \references{

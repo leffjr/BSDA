@@ -23,15 +23,17 @@ Virginia} \code{Wisconsin} \code{Wyoming}}
 \item{nodegree}{a numeric vector} 
 \item{crime}{a numeric vector} 
 }}
+\usage{
+Educat
+}
 \description{
 Data for Exercise 2.41
 }
 \examples{
 
 str(Educat)
-attach(Educat)
-plot(nodegree,crime,xlab="No Crime",ylab="Violent Crime Rate per 100,000")
-detach(Educat)
+plot(Educat$nodegree,Educat$crime,xlab="No Crime",ylab="Violent Crime Rate per 100,000")
+
 
 }
 \references{

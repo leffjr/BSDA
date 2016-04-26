@@ -16,19 +16,20 @@
 \item{X1994}{a numeric vector} 
 \item{X1995}{a numeric vector} 
 }}
+\usage{
+Jdpower
+}
 \description{
 Data for Exercise 2.14, 2.17, 2.31, 2.33, and 2.40
 }
 \examples{
 
 str(Jdpower)
-attach(Jdpower)
-plot(X1994,X1995)
-model <- lm(X1995~X1994)
+plot(Jdpower$X1994,Jdpower$X1995)
+model <- lm(Jdpower$X1995~Jdpower$X1994)
 abline(model)
 model
-cor(X1995,X1994)
-detach(Jdpower)
+cor(Jdpower$X1995,Jdpower$X1994)
 
 }
 \references{
